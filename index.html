@@ -168,7 +168,7 @@
       position: relative;
       overflow: visible;
       padding-top: 54px;
-      padding-bottom: 50px;
+      padding-bottom: 52px;
     }
     .hero-grid {
       display: grid;
@@ -242,7 +242,7 @@
     .dots span:first-child { margin-left: 0; background: #e59d74; }
     .dots span:nth-child(2) { background: #96afc9; }
 
-    /* HERO FLOATING IPHONE - LIFTED UP TO AVOID OVERLAPPING */
+    /* HERO FLOATING IPHONE */
     .hero-visual-col {
       position: relative;
       display: flex;
@@ -250,7 +250,7 @@
       align-items: center;
       height: 100%;
       min-height: 520px;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       z-index: 10;
     }
 
@@ -289,7 +289,7 @@
       animation: phoneHover 6s ease-in-out infinite alternate;
     }
 
-    /* iPhone Chassis */
+    /* iPhone Frame */
     .iphone-case {
       width: 100%;
       background: #1c1d21;
@@ -373,7 +373,7 @@
       height: 100%;
     }
 
-    /* Opaque Crisp White Profile Card - Clean & Legible */
+    /* Opaque Crisp White Profile Card */
     .profile-info {
       position: relative;
       margin: 0 10px 8px;
@@ -438,7 +438,7 @@
       gap: 4px;
     }
 
-    /* Better Reviews Section in Phone */
+    /* Reviews Section in Phone */
     .reviews-preview-box {
       background: #f8f9fa;
       border-top: 1px solid #ebece8;
@@ -476,14 +476,13 @@
       font-style: normal;
     }
 
-    /* Floating Animation */
     @keyframes phoneHover {
       0% { transform: translateY(-8px); }
       50% { transform: translateY(0px); }
       100% { transform: translateY(-14px); }
     }
 
-    /* CATEGORIES BAR - Isolated & Completely Clean */
+    /* CATEGORIES BAR */
     .trust-strip {
       border-top: 1px solid rgba(17, 18, 15, 0.08);
       border-bottom: 1px solid var(--line);
@@ -942,7 +941,6 @@
     }
     textarea { min-height: 85px; resize: vertical; }
 
-    /* Collapsible add-ons */
     details.addon-toggle {
       background: #12130f;
       border: 1px solid #36392c;
@@ -1077,7 +1075,7 @@
           </div>
         </div>
 
-        <!-- Right: Floating iPhone Vector Lifted Higher, With Opaque High-Contrast White Profile Card -->
+        <!-- Right: Floating iPhone Vector with Google Profile Mockup -->
         <div class="hero-visual-col" aria-label="Smartphone preview of a refreshed Google Business Profile">
           <div class="sticky-sticker">
             Real Google listings.<br>Real results.
@@ -1089,7 +1087,6 @@
               <div class="iphone-dynamic-island"></div>
               
               <div class="iphone-screen">
-                <!-- Search header -->
                 <div class="screen-header">
                   <span style="font-size:14px;color:#5f6368;">←</span>
                   <div class="google-logo">
@@ -1107,7 +1104,7 @@
                   </div>
                 </div>
 
-                <!-- Opaque White Profile Card: Black Font is 100% Sharp & Readable -->
+                <!-- Profile Information Card -->
                 <div class="profile-info">
                   <h3>This Could Be Your Business</h3>
                   <div class="stars-line">
@@ -1118,7 +1115,6 @@
                     Local Business · <strong>Open</strong> · Closes 9 PM
                   </div>
 
-                  <!-- Action Buttons -->
                   <div class="profile-actions">
                     <div class="action-btn"><span>📞</span> Call</div>
                     <div class="action-btn"><span>↗</span> Directions</div>
@@ -1181,290 +1177,6 @@
           </div>
 
           <div class="comparison-cards">
-            <!-- Before Card -->
             <article class="compare-card">
               <div class="compare-header">Geno's Steaks</div>
-              <div class="compare-meta">2.3 ★ (472) · $10–20 · Cheesesteaks</div>
-              <div class="compare-img-wrap">
-                <img src="images/Low-Reviews-Google%20.png" alt="Google listing screenshot for Geno's Steaks showing user reviews and photos" loading="lazy">
-              </div>
-              <div class="compare-pill-row">
-                <span class="badge-tag bad">Small portions</span>
-                <span class="badge-tag bad">Cold food</span>
-                <span class="badge-tag bad">Long wait</span>
-              </div>
-              <div class="compare-caption">
-                <span class="compare-tag">Before</span>
-                <p class="compare-desc">Inconsistent photos, limited details, low engagement.</p>
-              </div>
-            </article>
-
-            <!-- After Card -->
-            <article class="compare-card">
-              <div class="compare-header">Del Rossi's Cheesesteak & Pizza</div>
-              <div class="compare-meta">4.6 ★ (7K) · $20–30 · Cheesesteaks</div>
-              <div class="compare-img-wrap">
-                <img src="images/high-reviews-google.png" alt="Google listing screenshot for Del Rossi's showing rich food photography" loading="lazy">
-              </div>
-              <div class="compare-pill-row">
-                <span class="badge-tag good">Crispy crust</span>
-                <span class="badge-tag good">Fresh meats</span>
-                <span class="badge-tag good">Fast pickup</span>
-              </div>
-              <div class="compare-caption">
-                <span class="compare-tag lime">After</span>
-                <p class="compare-desc">Better photos, complete information, more customer trust.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 1. PACKAGES & PRICING SECTION -->
-    <section class="packages-section" id="services">
-      <div class="wrap">
-        <div class="packages-intro-wrap">
-          <div class="head-title-block">
-            <span class="eyebrow dark">Google Business Profile Refresh Packages</span>
-            <h2>Choose the package that fits your business.</h2>
-          </div>
-          <div class="curved-note">
-            One-time setup.<br>Long-term impact.
-            <span>⤹</span>
-          </div>
-        </div>
-
-        <div class="services-grid">
-          <!-- Essential -->
-          <article class="service-card">
-            <span class="eyebrow dark">Starter</span>
-            <h3>Essential Refresh</h3>
-            <div class="price">$149</div>
-            <ul>
-              <li>Updated photos (up to 10)</li>
-              <li>Better business description</li>
-              <li>Profile optimization basics</li>
-              <li>High-res digital files</li>
-            </ul>
-            <a class="btn outline choose-package" href="#contact" data-package="Essential Refresh — $149">Get started <span>→</span></a>
-          </article>
-
-          <!-- Growth -->
-          <article class="service-card featured">
-            <span class="popular">Most Popular</span>
-            <span class="eyebrow dark">Versatile</span>
-            <h3>Growth Refresh</h3>
-            <div class="price">$249</div>
-            <ul>
-              <li>Updated photos (up to 20)</li>
-              <li>Enhanced business description</li>
-              <li>Services & highlights setup</li>
-              <li>Basic keyword guidance</li>
-              <li>Files sized for Google & Instagram</li>
-            </ul>
-            <a class="btn lime choose-package" href="#contact" data-package="Growth Refresh — $249">Get started <span>→</span></a>
-          </article>
-
-          <!-- Premium -->
-          <article class="service-card">
-            <span class="eyebrow dark">Comprehensive</span>
-            <h3>Premium Refresh</h3>
-            <div class="price">$349</div>
-            <ul>
-              <li>Updated photos (up to 30)</li>
-              <li>Full profile optimization</li>
-              <li>Services & highlights setup</li>
-              <li>Competitor insights & recommendations</li>
-              <li>3 ready-to-use social captions</li>
-            </ul>
-            <a class="btn outline choose-package" href="#contact" data-package="Premium Refresh — $349">Get started <span>→</span></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. ADDITIONAL SERVICES SECTION -->
-    <section class="additional-section">
-      <div class="wrap">
-        <span class="eyebrow dark">Additional Services (For Approved Businesses)</span>
-        <h2>More ways to grow your business.</h2>
-        <p style="color:var(--muted); max-width:550px; margin-top:8px;">These services are available as add-ons for approved businesses. Scope and pricing are confirmed separately.</p>
-
-        <div class="additional-grid">
-          <article class="additional-card">
-            <div class="addon-icon">👥</div>
-            <h3>Customer service training</h3>
-            <p>Practical training for staff to help create a welcoming, consistent customer experience.</p>
-          </article>
-
-          <article class="additional-card">
-            <div class="addon-icon">📶</div>
-            <h3>NFC Google review cards</h3>
-            <p>Tap-to-open cards that make it easier for customers to reach your Google review page.</p>
-          </article>
-
-          <article class="additional-card">
-            <div class="addon-icon">📱</div>
-            <h3>Social media posting training</h3>
-            <p>Hands-on guidance for businesses that want to learn how to post their own social media updates.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. PROCESS SECTION -->
-    <section class="process" id="process">
-      <div class="wrap process-grid">
-        <div class="process-intro">
-          <span class="eyebrow dark">A straightforward process</span>
-          <h2>Less guesswork.<br>More good stuff.</h2>
-          <p>Getting fresh visuals shouldn't become another complicated task on your to-do list. We keep the process clear from the first conversation to final delivery.</p>
-          <a class="btn" style="margin-top:16px;" href="#contact">Start a conversation <span>↗</span></a>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="step-num">01</div><div><h3>Tell us what you need</h3><p>We'll talk about your business, where you show up online, and what you want your visuals to communicate.</p></div></div>
-          <div class="step"><div class="step-num">02</div><div><h3>Choose your refresh</h3><p>We'll recommend a package, confirm deliverables and timing, and answer questions before you commit.</p></div></div>
-          <div class="step"><div class="step-num">03</div><div><h3>Capture the details</h3><p>We plan a focused session around the details, services, products, and atmosphere that make your business yours.</p></div></div>
-          <div class="step"><div class="step-num">04</div><div><h3>Get ready-to-use visuals</h3><p>Receive your edited files and use them across the agreed channels to give your online presence a more consistent look.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAST CTA BANNER -->
-    <div class="cta-banner">
-      <div class="wrap cta-banner-inner">
-        <div class="cta-banner-text">
-          <div class="chat-bubble-icon">💬</div>
-          <div>
-            <h3>Ready for a Google Business Profile refresh?</h3>
-            <p>Fill out the form below and we'll get back to you within 1–2 business days.</p>
-          </div>
-        </div>
-        <a class="btn lime" href="#contact">Get in touch <span>→</span></a>
-      </div>
-    </div>
-
-    <!-- STREAMLINED CONTACT FORM -->
-    <section class="contact" id="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <span class="eyebrow">Your next step</span>
-          <h2>Let's make your business stand out.</h2>
-          <p class="contact-copy">Tell us a little about your business and what you're looking to improve. We'll use that to start a useful, no-pressure conversation.</p>
-          <div class="contact-points">
-            <span>Clear packages and expectations</span>
-            <span>Friendly, personalized service</span>
-            <span>Built around your business goals</span>
-          </div>
-        </div>
-
-        <form id="contact-form" action="https://formsubmit.co/spotonvisuals@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New Spot On Visuals website inquiry">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-
-          <div class="form-row">
-            <div class="field">
-              <label for="name">Your name *</label>
-              <input id="name" name="name" autocomplete="name" required placeholder="Jane Smith">
-            </div>
-            <div class="field">
-              <label for="business">Business name *</label>
-              <input id="business" name="business" required placeholder="Your business">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="field">
-              <label for="email">Email address *</label>
-              <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-            </div>
-            <div class="field">
-              <label for="phone">Phone (optional)</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Best number to reach you">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="field">
-              <label for="package">Package interest *</label>
-              <select id="package" name="google_refresh_package" required>
-                <option value="">Choose a starting option</option>
-                <option>Essential Refresh — $149</option>
-                <option>Growth Refresh — $249</option>
-                <option>Premium Refresh — $349</option>
-                <option>Not sure — recommend an option</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="business-type">Business type (optional)</label>
-              <select id="business-type" name="business_type">
-                <option value="">Choose one</option>
-                <option>Restaurant, café, or food business</option>
-                <option>Barber, salon, or beauty business</option>
-                <option>Retail or local shop</option>
-                <option>Professional or home service</option>
-                <option>Other local business</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Collapsible Optional Add-Ons -->
-          <details class="addon-toggle">
-            <summary>+ Add optional services (NFC cards, training)</summary>
-            <div class="addon-options">
-              <label style="display:flex; gap:9px; align-items:flex-start; margin:6px 0; font-weight:normal;">
-                <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="Customer service training for staff">
-                <span>Customer service training for staff</span>
-              </label>
-              <label style="display:flex; gap:9px; align-items:flex-start; margin:6px 0; font-weight:normal;">
-                <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="NFC Google review cards">
-                <span>NFC Google review cards</span>
-              </label>
-              <label style="display:flex; gap:9px; align-items:flex-start; margin:6px 0; font-weight:normal;">
-                <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="Social media posting training">
-                <span>Social media posting training</span>
-              </label>
-            </div>
-          </details>
-
-          <div class="field">
-            <label for="goals">What would you like to improve? *</label>
-            <textarea id="goals" name="goals" required placeholder="Tell us what you want to refresh or ask any questions..."></textarea>
-          </div>
-
-          <button class="btn lime" type="submit" style="width:100%;">Submit inquiry <span aria-hidden="true">↗</span></button>
-          <p class="form-help">
-            Note: On the first submission to <strong>spotonvisuals@gmail.com</strong>, check your inbox and click FormSubmit's confirmation button to activate instant lead routing.
-          </p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap footer-inner">
-      <a class="brand" href="#home">
-        <span class="brand-mark">S.</span> spot on visuals
-      </a>
-      <span>© <span id="year"></span> Spot On Visuals. All rights reserved.</span>
-      <a href="#home">Back to top ↑</a>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    document.querySelectorAll(".choose-package").forEach((link) => {
-      link.addEventListener("click", () => {
-        const packageSelect = document.getElementById("package");
-        if (packageSelect && link.dataset.package) {
-          packageSelect.value = link.dataset.package;
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+              <div class="compare-
