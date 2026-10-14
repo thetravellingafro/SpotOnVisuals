@@ -27,7 +27,6 @@
       --radius-sm: 12px;
       --radius: 20px;
       --radius-lg: 26px;
-      /* Tightened container width so content stays cohesive and not spread out */
       --max: 1040px;
     }
 
@@ -49,7 +48,6 @@
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
 
-    /* Centralized container */
     .wrap {
       width: min(var(--max), calc(100% - 40px));
       margin-left: auto;
@@ -163,7 +161,7 @@
       border-color: white;
     }
 
-    /* HERO SECTION - Snug 2-column layout */
+    /* HERO SECTION */
     .hero {
       background: var(--dark);
       color: white;
@@ -244,7 +242,7 @@
     .dots span:first-child { margin-left: 0; background: #e59d74; }
     .dots span:nth-child(2) { background: #96afc9; }
 
-    /* HERO VISUAL AREA */
+    /* HERO VISUAL AREA WITH PHOTOGRAPHIC CUTOUT */
     .hero-visual-col {
       position: relative;
       display: flex;
@@ -294,11 +292,14 @@
       animation: phoneHover 7s ease-in-out infinite alternate;
     }
 
-    .hero-mockup-svg {
+    /* Photographic Mockup Image */
+    .photo-mockup-img {
       width: 100%;
       height: auto;
+      max-height: 560px;
+      object-fit: contain;
       display: block;
-      filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(0 26px 36px rgba(0, 0, 0, 0.65));
     }
 
     .boundary-shadow {
@@ -306,7 +307,7 @@
       bottom: -14px;
       left: 50%;
       transform: translateX(-50%);
-      width: 78%;
+      width: 80%;
       height: 30px;
       background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 55%, transparent 75%);
       border-radius: 50%;
@@ -484,9 +485,10 @@
       line-height: 1.45;
     }
 
-    /* PACKAGES & PRICING SECTION - Fixed Proportions */
+    /* PACKAGES & PRICING SECTION */
     .packages-section {
       background: #ecebe2;
+      padding-bottom: 40px;
     }
     .packages-intro-wrap {
       display: flex;
@@ -585,16 +587,18 @@
       width: 100%;
     }
 
-    /* ADDITIONAL SERVICES CARDS */
+    /* ADDITIONAL SERVICES CARDS (Directly under packages) */
     .additional-section {
-      background: var(--paper);
-      padding: 70px 0;
+      background: #ecebe2;
+      padding-top: 20px;
+      padding-bottom: 75px;
+      border-bottom: 1px solid var(--line);
     }
     .additional-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin-top: 26px;
+      margin-top: 24px;
     }
     .additional-card {
       background: var(--white);
@@ -660,7 +664,7 @@
       margin: 0;
     }
 
-    /* CTA BANNER & FORM SECTION */
+    /* FAST CTA BANNER */
     .cta-banner {
       background: var(--dark);
       color: white;
@@ -700,6 +704,7 @@
       color: #9ea191;
     }
 
+    /* STREAMLINED CONTACT FORM */
     .contact {
       background: var(--dark);
       color: white;
@@ -769,7 +774,30 @@
     input:focus, select:focus, textarea:focus {
       border-color: var(--lime);
     }
-    textarea { min-height: 95px; resize: vertical; }
+    textarea { min-height: 85px; resize: vertical; }
+
+    /* Collapsible add-on details for faster submission */
+    details.addon-toggle {
+      background: #12130f;
+      border: 1px solid #36392c;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin: 0 0 16px;
+    }
+    details.addon-toggle summary {
+      cursor: pointer;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #d5d6cc;
+      outline: none;
+      user-select: none;
+    }
+    details.addon-toggle .addon-options {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #25281e;
+    }
+
     .form-help {
       color: #8c8f81;
       font-size: 11px;
@@ -864,7 +892,7 @@
     <!-- HERO SECTION -->
     <section class="hero" id="home">
       <div class="wrap hero-grid">
-        <!-- Left Column: Content Column (Snug & Perfectly Spaced) -->
+        <!-- Left: Text Column -->
         <div class="hero-text-col">
           <span class="eyebrow">Google Business Profile Refresh for Local Businesses</span>
           <h1>Refresh your Google Business Profile. <em>Make a better first impression.</em></h1>
@@ -883,7 +911,7 @@
           </div>
         </div>
 
-        <!-- Right Column: Nude Left Hand & Dark Brown Right Hand Holding Smartphone -->
+        <!-- Right: Photographic Cutout Area -->
         <div class="hero-visual-col" aria-label="Smartphone preview of a refreshed Google Business Profile">
           <div class="sticky-sticker">
             Real Google listings.<br>Real results.
@@ -891,156 +919,16 @@
           <div class="sparkle-burst" aria-hidden="true">✳</div>
           
           <div class="hand-phone-stage">
-            <svg class="hero-mockup-svg" viewBox="0 0 540 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left nude hand and right dark brown hand holding phone">
-              <defs>
-                <!-- Nude Skin Gradients (Left Hand) -->
-                <linearGradient id="nudeArm" x1="0%" y1="100%" x2="70%" y2="0%">
-                  <stop offset="0%" stop-color="#dfa98e" />
-                  <stop offset="50%" stop-color="#eec2ab" />
-                  <stop offset="100%" stop-color="#f5d4c2" />
-                </linearGradient>
-                <linearGradient id="nudeThumb" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#f6d3bf" />
-                  <stop offset="60%" stop-color="#e9b79e" />
-                  <stop offset="100%" stop-color="#cb8f72" />
-                </linearGradient>
-
-                <!-- Dark Brown Skin Gradients (Right Hand) -->
-                <linearGradient id="darkArm" x1="100%" y1="100%" x2="20%" y2="0%">
-                  <stop offset="0%" stop-color="#2d170d" />
-                  <stop offset="40%" stop-color="#462719" />
-                  <stop offset="80%" stop-color="#693e2a" />
-                  <stop offset="100%" stop-color="#834f36" />
-                </linearGradient>
-                <linearGradient id="darkFinger" x1="0%" y1="50%" x2="100%" y2="50%">
-                  <stop offset="0%" stop-color="#55301e" />
-                  <stop offset="100%" stop-color="#73422a" />
-                </linearGradient>
-
-                <!-- Phone Hardware Styling -->
-                <linearGradient id="phoneFrame" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#43464d" />
-                  <stop offset="35%" stop-color="#1c1d20" />
-                  <stop offset="100%" stop-color="#101113" />
-                </linearGradient>
-                <linearGradient id="glassGloss" x1="0%" y1="0%" x2="60%" y2="100%">
-                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
-                  <stop offset="45%" stop-color="#ffffff" stop-opacity="0.03" />
-                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-                </linearGradient>
-
-                <filter id="phoneShadow" x="-15%" y="-15%" width="130%" height="130%">
-                  <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>
-                </filter>
-                <filter id="thumbShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="-2" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
-                </filter>
-
-                <clipPath id="screenClip">
-                  <rect x="156" y="58" width="244" height="490" rx="34" />
-                </clipPath>
-              </defs>
-
-              <!-- LEFT NUDE HAND & FOREARM (Cut off entering from bottom-left) -->
-              <g>
-                <path d="M0 680 L90 520 C110 470 120 400 135 340 C145 300 160 310 165 350 L140 500 L0 680 Z" fill="url(#nudeArm)" />
-                <path d="M90 520 C115 460 130 380 148 335 C155 315 168 330 170 360 L145 530 Z" fill="#cf9c82" opacity="0.6" />
-              </g>
-
-              <!-- RIGHT DARK BROWN HAND & FOREARM (Going off bottom-right edge) -->
-              <g>
-                <path d="M540 680 L425 500 C410 440 415 360 425 295 C435 240 448 260 455 315 L540 440 Z" fill="url(#darkArm)" />
-                <path d="M420 230 C436 230 446 244 444 265 C442 280 430 288 416 284 C408 282 408 268 412 250 C414 235 417 230 420 230 Z" fill="url(#darkFinger)" />
-                <path d="M424 290 C440 290 450 304 448 325 C446 340 434 348 420 344 C412 342 412 328 416 310 C418 295 421 290 424 290 Z" fill="url(#darkFinger)" />
-                <path d="M420 350 C436 350 446 364 444 385 C442 400 430 408 416 404 C408 402 408 388 412 370 C414 355 417 350 420 350 Z" fill="url(#darkFinger)" />
-                <ellipse cx="438" cy="256" rx="4" ry="6" fill="#8f5c43" opacity="0.75" />
-                <ellipse cx="442" cy="316" rx="4" ry="6" fill="#89563e" opacity="0.75" />
-                <ellipse cx="438" cy="376" rx="4" ry="6" fill="#7f4e37" opacity="0.75" />
-              </g>
-
-              <!-- PHONE HARDWARE -->
-              <g filter="url(#phoneShadow)">
-                <rect x="148" y="50" width="260" height="506" rx="40" fill="url(#phoneFrame)" stroke="#3f4247" stroke-width="2.5"/>
-                <rect x="250" y="62" width="56" height="5" rx="2.5" fill="#080808" />
-                <circle cx="238" cy="64.5" r="3" fill="#141517" />
-                <rect x="156" y="58" width="244" height="490" rx="34" fill="#ffffff" />
-              </g>
-
-              <!-- SCREEN CONTENT: Google Business Profile (This Could Be Your Business) -->
-              <g clip-path="url(#screenClip)">
-                <rect x="156" y="58" width="244" height="52" fill="#ffffff" />
-                <text x="172" y="90" font-family="'DM Sans', sans-serif" font-size="15" fill="#5f6368">←</text>
-                <text x="252" y="91" font-family="'Manrope', sans-serif" font-weight="800" font-size="15.5" fill="#4285F4">G<tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan></text>
-                <text x="372" y="90" font-family="'DM Sans', sans-serif" font-size="15" fill="#5f6368">⋮</text>
-
-                <rect x="168" y="116" width="144" height="92" rx="8" fill="#4a5f4c" />
-                <path d="M180 178 L230 142 L290 178 Z" fill="#334535" opacity="0.7" />
-                <rect x="194" y="162" width="20" height="24" rx="2" fill="#dce2ce" />
-                <rect x="244" y="156" width="34" height="30" rx="2" fill="#c3ceae" />
-                <rect x="318" y="116" width="72" height="43" rx="7" fill="#d9ad80" />
-                <rect x="318" y="165" width="72" height="43" rx="7" fill="#e7caa9" />
-
-                <text x="170" y="228" font-family="'Manrope', sans-serif" font-weight="800" font-size="13.5" fill="#202124">This Could Be Your Business</text>
-                <text x="170" y="244" font-family="'DM Sans', sans-serif" font-weight="700" font-size="11" fill="#e37400">4.7 ★★★★★</text>
-                <text x="234" y="244" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#70757a">(128)</text>
-                <text x="170" y="259" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#70757a">Local Business · <tspan fill="#188038" font-weight="700">Open</tspan></text>
-
-                <text x="170" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="800" fill="#1a73e8">OVERVIEW</text>
-                <line x1="170" y1="289" x2="225" y2="289" stroke="#1a73e8" stroke-width="2.5" />
-                <text x="236" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">UPDATES</text>
-                <text x="290" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">REVIEWS</text>
-                <text x="344" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">PHOTOS</text>
-                <line x1="168" y1="291" x2="388" y2="291" stroke="#e0e0e0" stroke-width="1" />
-
-                <g transform="translate(176, 303)">
-                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
-                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">📞</text>
-                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">CALL</text>
-                </g>
-                <g transform="translate(238, 303)">
-                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
-                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">↗</text>
-                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">DIRECTIONS</text>
-                </g>
-                <g transform="translate(304, 303)">
-                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
-                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">🌐</text>
-                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">WEBSITE</text>
-                </g>
-
-                <line x1="168" y1="358" x2="388" y2="358" stroke="#f0f0f0" stroke-width="1" />
-                <text x="174" y="380" font-size="11" fill="#1a73e8">📍</text>
-                <text x="194" y="378" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#3c4043">123 Main Street, City ST</text>
-
-                <line x1="168" y1="400" x2="388" y2="400" stroke="#f0f0f0" stroke-width="1" />
-                <text x="174" y="420" font-size="11" fill="#188038">🕒</text>
-                <text x="194" y="419" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#188038" font-weight="700">Open <tspan font-weight="400" fill="#70757a">· Closes 8 PM</tspan></text>
-
-                <text x="174" y="452" font-family="'Manrope', sans-serif" font-weight="700" font-size="9.5" fill="#3c4043">Popular times</text>
-                <text x="260" y="452" font-family="'DM Sans', sans-serif" font-size="8.5" fill="#ea4335">● Live: Busier</text>
-                <g fill="#8ab4f8" transform="translate(174, 462)">
-                  <rect x="0" y="20" width="8" height="14" rx="2"/>
-                  <rect x="12" y="16" width="8" height="18" rx="2"/>
-                  <rect x="24" y="12" width="8" height="22" rx="2"/>
-                  <rect x="36" y="6" width="8" height="28" rx="2"/>
-                  <rect x="48" y="0" width="8" height="34" rx="2" fill="#4285f4"/>
-                  <rect x="60" y="5" width="8" height="29" rx="2"/>
-                  <rect x="72" y="11" width="8" height="23" rx="2"/>
-                  <rect x="84" y="18" width="8" height="16" rx="2"/>
-                </g>
-
-                <polygon points="156,58 280,58 210,548 156,548" fill="url(#glassGloss)" />
-              </g>
-
-              <!-- LEFT NUDE THUMB OVER BEZEL -->
-              <g filter="url(#thumbShadow)">
-                <path d="M110 400 C120 330 145 295 195 308 C210 312 222 332 216 352 C210 370 186 386 154 406 C134 420 120 440 106 465 Z" fill="url(#nudeThumb)" />
-                <path d="M152 355 C166 360 180 358 190 350" stroke="#b67f65" stroke-width="2" stroke-linecap="round" opacity="0.5" />
-                <path d="M196 322 C202 324 209 332 208 340 C206 345 200 346 195 342 C192 338 193 328 196 322 Z" fill="#f8dbcf" opacity="0.8" />
-              </g>
-            </svg>
-
-            <!-- Line Grounding Shadow -->
+            <!-- 
+              Uses your realistic hand cutout image asset.
+              Ensure your cutout is saved in images/hand-phone-mockup.png 
+            -->
+            <img 
+              class="photo-mockup-img" 
+              src="images/hand-phone-mockup.png" 
+              alt="Hands holding a smartphone showing 'This Could Be Your Business' on Google"
+              onerror="this.onerror=null; this.src='images/high-reviews-google.png';"
+            >
             <div class="boundary-shadow" aria-hidden="true"></div>
           </div>
         </div>
@@ -1083,9 +971,8 @@
             </div>
           </div>
 
-          <!-- Comparative Google Card Screenshots -->
           <div class="comparison-cards">
-            <!-- Low Review Card -->
+            <!-- Before Card -->
             <article class="compare-card">
               <div class="compare-header">Geno's Steaks</div>
               <div class="compare-meta">2.3 ★ (472) · $10–20 · Cheesesteaks</div>
@@ -1103,7 +990,7 @@
               </div>
             </article>
 
-            <!-- High Review Card -->
+            <!-- After Card -->
             <article class="compare-card">
               <div class="compare-header">Del Rossi's Cheesesteak & Pizza</div>
               <div class="compare-meta">4.6 ★ (7K) · $20–30 · Cheesesteaks</div>
@@ -1140,7 +1027,7 @@
         </div>
 
         <div class="services-grid">
-          <!-- Essential Refresh -->
+          <!-- Essential -->
           <article class="service-card">
             <span class="eyebrow dark">Starter</span>
             <h3>Essential Refresh</h3>
@@ -1154,7 +1041,7 @@
             <a class="btn outline choose-package" href="#contact" data-package="Essential Refresh — $149">Get started <span>→</span></a>
           </article>
 
-          <!-- Growth Refresh -->
+          <!-- Growth -->
           <article class="service-card featured">
             <span class="popular">Most Popular</span>
             <span class="eyebrow dark">Versatile</span>
@@ -1170,7 +1057,7 @@
             <a class="btn lime choose-package" href="#contact" data-package="Growth Refresh — $249">Get started <span>→</span></a>
           </article>
 
-          <!-- Premium Refresh -->
+          <!-- Premium -->
           <article class="service-card">
             <span class="eyebrow dark">Comprehensive</span>
             <h3>Premium Refresh</h3>
@@ -1188,25 +1075,7 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS (PROCESS) -->
-    <section class="process" id="process">
-      <div class="wrap process-grid">
-        <div class="process-intro">
-          <span class="eyebrow dark">A straightforward process</span>
-          <h2>Less guesswork.<br>More good stuff.</h2>
-          <p>Getting fresh visuals shouldn't become another complicated task on your to-do list. We keep the process clear from the first conversation to final delivery.</p>
-          <a class="btn" style="margin-top:16px;" href="#contact">Start a conversation <span>↗</span></a>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="step-num">01</div><div><h3>Tell us what you need</h3><p>We'll talk about your business, where you show up online, and what you want your visuals to communicate.</p></div></div>
-          <div class="step"><div class="step-num">02</div><div><h3>Choose your refresh</h3><p>We'll recommend a package, confirm deliverables and timing, and answer questions before you commit.</p></div></div>
-          <div class="step"><div class="step-num">03</div><div><h3>Capture the details</h3><p>We plan a focused session around the details, services, products, and atmosphere that make your business yours.</p></div></div>
-          <div class="step"><div class="step-num">04</div><div><h3>Get ready-to-use visuals</h3><p>Receive your edited files and use them across the agreed channels to give your online presence a more consistent look.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ADDITIONAL SERVICES (FOR APPROVED BUSINESSES) -->
+    <!-- ADDITIONAL SERVICES (PLACED DIRECTLY UNDER PRICING PACKAGES) -->
     <section class="additional-section">
       <div class="wrap">
         <span class="eyebrow dark">Additional Services (For Approved Businesses)</span>
@@ -1235,6 +1104,24 @@
       </div>
     </section>
 
+    <!-- HOW IT WORKS (PROCESS) -->
+    <section class="process" id="process">
+      <div class="wrap process-grid">
+        <div class="process-intro">
+          <span class="eyebrow dark">A straightforward process</span>
+          <h2>Less guesswork.<br>More good stuff.</h2>
+          <p>Getting fresh visuals shouldn't become another complicated task on your to-do list. We keep the process clear from the first conversation to final delivery.</p>
+          <a class="btn" style="margin-top:16px;" href="#contact">Start a conversation <span>↗</span></a>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">01</div><div><h3>Tell us what you need</h3><p>We'll talk about your business, where you show up online, and what you want your visuals to communicate.</p></div></div>
+          <div class="step"><div class="step-num">02</div><div><h3>Choose your refresh</h3><p>We'll recommend a package, confirm deliverables and timing, and answer questions before you commit.</p></div></div>
+          <div class="step"><div class="step-num">03</div><div><h3>Capture the details</h3><p>We plan a focused session around the details, services, products, and atmosphere that make your business yours.</p></div></div>
+          <div class="step"><div class="step-num">04</div><div><h3>Get ready-to-use visuals</h3><p>Receive your edited files and use them across the agreed channels to give your online presence a more consistent look.</p></div></div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAST CTA BANNER -->
     <div class="cta-banner">
       <div class="wrap cta-banner-inner">
@@ -1249,7 +1136,7 @@
       </div>
     </div>
 
-    <!-- CONTACT FORM -->
+    <!-- STREAMLINED CONTACT FORM -->
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
         <div>
@@ -1290,58 +1177,57 @@
             </div>
           </div>
 
-          <div class="field">
-            <label for="business-type">What type of business do you run? *</label>
-            <select id="business-type" name="business_type" required>
-              <option value="">Choose one</option>
-              <option>Restaurant, café, or food business</option>
-              <option>Barber, salon, or beauty business</option>
-              <option>Retail or local shop</option>
-              <option>Professional or home service</option>
-              <option>Other local business</option>
-            </select>
+          <div class="form-row">
+            <div class="field">
+              <label for="package">Package interest *</label>
+              <select id="package" name="google_refresh_package" required>
+                <option value="">Choose a starting option</option>
+                <option>Essential Refresh — $149</option>
+                <option>Growth Refresh — $249</option>
+                <option>Premium Refresh — $349</option>
+                <option>Not sure — recommend an option</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="business-type">Business type (optional)</label>
+              <select id="business-type" name="business_type">
+                <option value="">Choose one</option>
+                <option>Restaurant, café, or food business</option>
+                <option>Barber, salon, or beauty business</option>
+                <option>Retail or local shop</option>
+                <option>Professional or home service</option>
+                <option>Other local business</option>
+              </select>
+            </div>
           </div>
 
-          <div class="field">
-            <label for="package">Google Business Profile refresh interest *</label>
-            <select id="package" name="google_refresh_package" required>
-              <option value="">Choose a starting option</option>
-              <option>Essential Refresh — $149</option>
-              <option>Growth Refresh — $249</option>
-              <option>Premium Refresh — $349</option>
-              <option>Not sure — recommend an option</option>
-            </select>
-          </div>
-
-          <fieldset style="border:1px solid #3c4033; border-radius:12px; padding:14px; margin:0 0 16px;">
-            <legend style="padding:0 6px; font-size:11px; color:#d5d6cc; font-weight:700;">Additional services to discuss (optional)</legend>
-            <label style="display:flex; gap:9px; align-items:flex-start; margin:8px 0; font-weight:normal;">
-              <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="Customer service training for staff">
-              <span>Customer service training for staff</span>
-            </label>
-            <label style="display:flex; gap:9px; align-items:flex-start; margin:8px 0; font-weight:normal;">
-              <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="NFC Google review cards">
-              <span>NFC Google review cards for quick access to the review page</span>
-            </label>
-            <label style="display:flex; gap:9px; align-items:flex-start; margin:8px 0; font-weight:normal;">
-              <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="Social media posting training">
-              <span>Training on how to post on social media</span>
-            </label>
-          </fieldset>
-
-          <div class="field">
-            <label for="google-profile">Google Business Profile link (optional)</label>
-            <input id="google-profile" name="google_business_profile_url" type="url" placeholder="Paste your Google listing link if available">
-          </div>
+          <!-- Collapsible Optional Add-Ons -->
+          <details class="addon-toggle">
+            <summary>+ Add optional services (NFC cards, training)</summary>
+            <div class="addon-options">
+              <label style="display:flex; gap:9px; align-items:flex-start; margin:6px 0; font-weight:normal;">
+                <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="Customer service training for staff">
+                <span>Customer service training for staff</span>
+              </label>
+              <label style="display:flex; gap:9px; align-items:flex-start; margin:6px 0; font-weight:normal;">
+                <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="NFC Google review cards">
+                <span>NFC Google review cards</span>
+              </label>
+              <label style="display:flex; gap:9px; align-items:flex-start; margin:6px 0; font-weight:normal;">
+                <input style="width:auto; margin-top:4px;" type="checkbox" name="additional_services[]" value="Social media posting training">
+                <span>Social media posting training</span>
+              </label>
+            </div>
+          </details>
 
           <div class="field">
             <label for="goals">What would you like to improve? *</label>
-            <textarea id="goals" name="goals" required placeholder="Tell us what your business does, what you want to refresh, and any questions you have..."></textarea>
+            <textarea id="goals" name="goals" required placeholder="Tell us what you want to refresh or ask any questions..."></textarea>
           </div>
 
           <button class="btn lime" type="submit" style="width:100%;">Submit inquiry <span aria-hidden="true">↗</span></button>
           <p class="form-help">
-            Note: On the first submission to <strong>spotonvisuals@gmail.com</strong>, check your email inbox and click FormSubmit's confirmation button to activate instant lead routing.
+            Note: On the first submission to <strong>spotonvisuals@gmail.com</strong>, check your inbox and click FormSubmit's confirmation button to activate instant lead routing.
           </p>
         </form>
       </div>
