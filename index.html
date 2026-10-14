@@ -187,6 +187,15 @@
       form { padding: 20px; }
     }
   
+
+    .additional-services { background: #f0f0e8; }
+    .additional-intro { max-width: 720px; color: var(--muted); }
+    .additional-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+    .additional-card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    .additional-card h3 { font-size: 21px; margin: 0 0 10px; }
+    .additional-card p { color: var(--muted); font-size: 13px; margin: 0; }
+    @media (max-width: 850px) { .additional-grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
@@ -235,7 +244,7 @@
             <h3>Want your business to make a stronger first impression?</h3>
             <p>Explore a clear, one-time visual refresh built around your business.</p>
           </div>
-          <a class="btn lime" href="#services">Explore packages <span aria-hidden="true">↗</span></a>
+          <a class="btn lime" href="#services">Explore Google refresh packages <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -243,14 +252,14 @@
     <section class="hero" id="home">
       <div class="wrap hero-grid">
         <div>
-          <span class="eyebrow">Visual content for growing businesses</span>
-          <h1>Make your first impression <em>count.</em></h1>
-          <p class="hero-copy">Your business looks great in person. Let's make sure it looks just as good online. We create thoughtful visuals that help local businesses show up with confidence on Google and social media.</p>
+          <span class="eyebrow">Google Business Profile refresh for local businesses</span>
+          <h1>Refresh your Google Business Profile. <em>Make a better first impression.</em></h1>
+          <p class="hero-copy">We help eligible local businesses refresh their Google Business Profile with clearer, current photos and practical profile guidance—so customers can get a better feel for your business before they visit. Additional training and review tools may be available for approved businesses.</p>
           <div class="hero-actions">
             <a class="btn lime" href="#services">Explore packages <span aria-hidden="true">↗</span></a>
             <a class="btn outline" href="#contact">Tell us about your business</a>
           </div>
-          <div class="hero-note"><div class="dots" aria-hidden="true"><span></span><span></span><span></span></div><span>Personal service. Clear packages. Made for local business.</span></div>
+          <div class="hero-note"><div class="dots" aria-hidden="true"><span></span><span></span><span></span></div><span>Start with a Google Business Profile refresh. Ask about additional support.</span></div>
         </div>
         <div class="hero-art" aria-label="Photography showcasing a local business">
           <div class="spark" aria-hidden="true">✳</div>
@@ -273,14 +282,14 @@
     <section id="services">
       <div class="wrap">
         <div class="section-head">
-          <div><span class="eyebrow dark">Simple, clear packages</span><h2>Good visuals.<br>Clear options.</h2></div>
-          <p>Start with what your business needs today. Every package is a one-time service with a clear scope—no confusing long-term commitment.</p>
+          <div><span class="eyebrow dark">Simple, clear packages</span><h2>Start with a Google Business Profile refresh.</h2></div>
+          <p>Choose the level of photo refresh that fits your business. We will confirm the exact scope and eligibility before any booking.</p>
         </div>
         <div class="services-grid">
           <article class="service-card">
             <span class="eyebrow dark">01 / Starter</span>
-            <h3>Google Visual Refresh</h3>
-            <p>A sharper first look for your Google Business Profile.</p>
+            <h3>Google Business Profile Refresh</h3>
+            <p>The starting option: fresh, edited photos prepared for your Google Business Profile.</p>
             <div class="price">$149 <small>/ one time</small></div>
             <ul><li>Up to 8 edited photos</li><li>Products, services, or space</li><li>Files ready for Google</li><li>Photo organization guidance</li></ul>
             <a class="btn outline choose-package" href="#contact" data-package="Google Visual Refresh — $149">Choose starter <span>↗</span></a>
@@ -329,6 +338,31 @@
       </div>
     </section>
 
+
+    <section class="additional-services" id="additional-services">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow dark">Additional options</span><h2>Need support beyond the refresh?</h2></div>
+          <p>For approved businesses, additional services may be available after an initial conversation. Select any options you would like to discuss in the inquiry form below.</p>
+        </div>
+        <div class="additional-grid">
+          <article class="additional-card">
+            <h3>Customer service training</h3>
+            <p>Practical staff training to help create a welcoming, consistent customer experience.</p>
+          </article>
+          <article class="additional-card">
+            <h3>NFC Google review cards</h3>
+            <p>Tap-to-open NFC cards that make it easier for customers to reach your Google review page. Reviews should always be voluntary and honest.</p>
+          </article>
+          <article class="additional-card">
+            <h3>Social media posting training</h3>
+            <p>Hands-on guidance to help your team learn how to prepare and post updates on your social channels.</p>
+          </article>
+        </div>
+        <p class="note">These additional options are subject to business eligibility, scope, availability, and a separate quote. No review rating or customer traffic outcome is guaranteed.</p>
+      </div>
+    </section>
+
     <div class="cta-band"><div class="wrap cta-inner"><h2>Ready to give your online presence a refresh?</h2><a class="btn" href="#contact">Let's talk about it <span>↗</span></a></div></div>
 
 
@@ -337,18 +371,51 @@
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
         <div><span class="eyebrow">Your next step</span><h2>Let's make your business stand out.</h2><p class="contact-copy">Tell us a little about your business and what you're looking to improve. We'll use that to start a useful, no-pressure conversation.</p><div class="contact-points"><span>Clear packages and expectations</span><span>Friendly, personalized service</span><span>Built around your business goals</span></div></div>
-        <form id="contact-form">
+        <form id="contact-form" action="https://formsubmit.co/YOUR_EMAIL_ADDRESS" method="POST">
+          <input type="hidden" name="_subject" value="New Spot On Visuals website inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="">
           <div class="form-row">
-            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Jane Smith"></div>
-            <div class="field"><label for="business">Business name</label><input id="business" name="business" required placeholder="Your business"></div>
+            <div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required placeholder="Jane Smith"></div>
+            <div class="field"><label for="business">Business name *</label><input id="business" name="business" required placeholder="Your business"></div>
           </div>
           <div class="form-row">
-            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
-            <div class="field"><label for="package">Interested in</label><select id="package" name="package"><option value="Not sure yet">Not sure yet</option><option>Google Visual Refresh — $149</option><option>Small Business Visual Refresh — $249</option><option>Google + Social Refresh — $349</option><option>Custom project</option></select></div>
+            <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+            <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Best number to reach you"></div>
           </div>
-          <div class="field"><label for="message">What would you like help with?</label><textarea id="message" name="message" placeholder="Tell us about your business and goals..."></textarea></div>
-          <button class="btn lime" type="submit">Prepare my inquiry <span>↗</span></button>
-          <p class="form-help" id="form-help">Submitting opens an email draft in your mail app; this website does not store form submissions. Replace the placeholder email in the script before publishing, or connect a form service to receive inquiries reliably.</p>
+          <div class="field">
+            <label for="business-type">What type of business do you run? *</label>
+            <select id="business-type" name="business_type" required>
+              <option value="">Choose one</option>
+              <option>Restaurant, café, or food business</option>
+              <option>Barber, salon, or beauty business</option>
+              <option>Retail or local shop</option>
+              <option>Professional or home service</option>
+              <option>Other local business</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="package">Google Business Profile refresh interest *</label>
+            <select id="package" name="google_refresh_package" required>
+              <option value="">Choose a starting option</option>
+              <option>Google Business Profile Refresh — $149</option>
+              <option>Small Business Visual Refresh — $249</option>
+              <option>Google + Social Refresh — $349</option>
+              <option>Not sure — recommend an option</option>
+            </select>
+          </div>
+          <fieldset style="border:1px solid #41433a;border-radius:12px;padding:14px;margin:0 0 16px">
+            <legend style="padding:0 6px;font-size:11px;color:#d5d6cc;font-weight:700">Additional services to discuss (optional)</legend>
+            <label style="display:flex;gap:9px;align-items:flex-start;margin:10px 0"><input style="width:auto;margin-top:4px" type="checkbox" name="additional_services[]" value="Customer service training for staff"> <span>Customer service training for staff</span></label>
+            <label style="display:flex;gap:9px;align-items:flex-start;margin:10px 0"><input style="width:auto;margin-top:4px" type="checkbox" name="additional_services[]" value="NFC Google review cards"> <span>NFC Google review cards for quick access to the review page</span></label>
+            <label style="display:flex;gap:9px;align-items:flex-start;margin:10px 0"><input style="width:auto;margin-top:4px" type="checkbox" name="additional_services[]" value="Social media posting training"> <span>Training on how to post on social media</span></label>
+            <label style="display:flex;gap:9px;align-items:flex-start;margin:10px 0"><input style="width:auto;margin-top:4px" type="checkbox" name="additional_services[]" value="Other additional support"> <span>Other support / not sure yet</span></label>
+          </fieldset>
+          <div class="field"><label for="google-profile">Google Business Profile link (optional)</label><input id="google-profile" name="google_business_profile_url" type="url" placeholder="Paste your Google listing link if available"></div>
+          <div class="field"><label for="goals">What would you like to improve? *</label><textarea id="goals" name="goals" required placeholder="Tell us what your business does, what you want to refresh, and any questions you have..."></textarea></div>
+          <button class="btn lime" type="submit">Submit inquiry <span aria-hidden="true">↗</span></button>
+          <p class="form-help" id="form-help">This form sends your inquiry through FormSubmit. The first submission may require you to confirm your email address with FormSubmit before inquiries are delivered. Replace YOUR_EMAIL_ADDRESS in the form action with your receiving email before publishing.</p>
         </form>
       </div>
     </section>
@@ -357,32 +424,13 @@
   <footer><div class="wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark">S.</span> spot on visuals</a><span>© <span id="year"></span> Spot On Visuals. All rights reserved.</span><a href="#home">Back to top ↑</a></div></footer>
 
   <script>
-    // IMPORTANT: Replace this with the email address where you want inquiries delivered.
-    const BUSINESS_EMAIL = "REPLACE_WITH_YOUR_EMAIL";
     document.getElementById("year").textContent = new Date().getFullYear();
 
     document.querySelectorAll(".choose-package").forEach((link) => {
       link.addEventListener("click", () => {
-        document.getElementById("package").value = link.dataset.package;
+        const packageSelect = document.getElementById("package");
+        if (packageSelect) packageSelect.value = link.dataset.package;
       });
-    });
-
-    document.getElementById("contact-form").addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      if (BUSINESS_EMAIL === "REPLACE_WITH_YOUR_EMAIL") {
-        alert("Before this form can prepare an email, open index.html and replace REPLACE_WITH_YOUR_EMAIL with your business email address. For a live website form, connect a form service such as Formspree.");
-        return;
-      }
-      const subject = encodeURIComponent("Spot On Visuals inquiry — " + data.get("business"));
-      const body = encodeURIComponent(
-        "Name: " + data.get("name") + "\n" +
-        "Business: " + data.get("business") + "\n" +
-        "Email: " + data.get("email") + "\n" +
-        "Package: " + data.get("package") + "\n\n" +
-        "Project details:\n" + (data.get("message") || "Not provided")
-      );
-      window.location.href = "mailto:" + BUSINESS_EMAIL + "?subject=" + subject + "&body=" + body;
     });
   </script>
 </body>
