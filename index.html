@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#10110f">
-  <meta name="description" content="Professional photography and visual content for Philadelphia-area local businesses. Explore simple visual refresh packages for Google and social media.">
+  <meta name="description" content="Professional photography and Google Business Profile refresh packages for Philadelphia-area local businesses.">
   <meta property="og:title" content="Spot On Visuals — Refresh Your Google Business Profile">
   <meta property="og:description" content="Thoughtful visual content for local businesses, with clear one-time packages for Google and social media.">
   <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@600;700&family=Manrope:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -24,15 +24,14 @@
       --muted: #6b6d63;
       --line: #e3e2d8;
       --dark: #10110f;
-      --dark-card: #171914;
       --radius-sm: 12px;
       --radius: 20px;
-      --radius-lg: 28px;
-      --max: 1200px;
+      --radius-lg: 26px;
+      --max: 1140px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; overflow-x: clip; }
     :focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
     
     body {
@@ -42,12 +41,20 @@
       font-family: "DM Sans", sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      overflow-x: clip;
+      width: 100%;
     }
 
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
-    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+    /* Strict alignment container */
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
 
     /* Topbar */
     .topbar {
@@ -161,15 +168,19 @@
       color: white;
       position: relative;
       overflow: visible;
-      padding-top: 54px;
-      padding-bottom: 30px;
+      padding-top: 48px;
+      padding-bottom: 24px;
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 36px;
+      gap: 40px;
       position: relative;
+    }
+    .hero-text-col {
+      z-index: 5;
+      max-width: 530px;
     }
     .eyebrow {
       display: inline-flex;
@@ -180,7 +191,7 @@
       letter-spacing: .15em;
       font-size: 11.5px;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .eyebrow::before {
       content: "";
@@ -192,8 +203,8 @@
       font-family: Manrope, sans-serif;
       letter-spacing: -.05em;
       line-height: 1.05;
-      font-size: clamp(40px, 4.7vw, 68px);
-      margin: 0 0 24px;
+      font-size: clamp(38px, 4.4vw, 64px);
+      margin: 0 0 22px;
       font-weight: 800;
     }
     h1 em {
@@ -202,10 +213,9 @@
     }
     .hero-copy {
       color: #b7baa9;
-      font-size: 16.5px;
-      max-width: 500px;
+      font-size: 16px;
       line-height: 1.75;
-      margin: 0 0 32px;
+      margin: 0 0 30px;
     }
     .hero-actions {
       display: flex;
@@ -219,7 +229,7 @@
       gap: 14px;
       color: #8f9284;
       font-size: 12.5px;
-      margin-top: 36px;
+      margin-top: 34px;
     }
     .dots { display: flex; }
     .dots span {
@@ -233,41 +243,39 @@
     .dots span:first-child { margin-left: 0; background: #e59d74; }
     .dots span:nth-child(2) { background: #96afc9; }
 
-    /* HIGH-FIDELITY HERO VISUAL CONTAINER */
+    /* HERO VISUAL AREA (DUAL HANDS + HOVERING PHONE) */
     .hero-visual-col {
       position: relative;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: flex-end;
       height: 100%;
-      min-height: 600px;
-      margin-bottom: -72px; /* Smoothly bridges over separation border line */
+      min-height: 560px;
+      margin-bottom: -68px; /* Gently extends across line into next section */
       z-index: 10;
-      pointer-events: none;
     }
-    .hero-visual-col * { pointer-events: auto; }
 
     .sticky-sticker {
       position: absolute;
-      top: 24px;
-      left: 14px;
+      top: 18px;
+      left: 10px;
       background: var(--lime);
       color: var(--dark);
       font-family: Manrope, sans-serif;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 800;
       line-height: 1.25;
-      padding: 12px 18px;
-      border-radius: 14px;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+      padding: 11px 16px;
+      border-radius: 12px;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.4);
       transform: rotate(-7deg);
       z-index: 25;
       pointer-events: none;
     }
     .sparkle-burst {
       position: absolute;
-      top: 6px;
-      right: 24px;
+      top: 4px;
+      right: 12px;
       color: var(--lime);
       font-size: 42px;
       line-height: 1;
@@ -275,70 +283,42 @@
       user-select: none;
     }
 
-    /* Hand & Device Wrapper */
     .hand-phone-stage {
       position: relative;
       width: 100%;
-      max-width: 440px;
+      max-width: 480px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      transform-origin: center bottom;
-      animation: phoneHover 8s ease-in-out infinite alternate;
+      animation: phoneHover 7s ease-in-out infinite alternate;
     }
 
-    /* Realistic 30s Multi-Tone Skin Transition */
-    .skin-shifter {
+    .hero-mockup-svg {
       width: 100%;
       height: auto;
       display: block;
-      filter: drop-shadow(0 30px 42px rgba(0, 0, 0, 0.65)) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.4));
-      animation: realisticSkinCycle 30s ease-in-out infinite;
-      will-change: filter;
+      filter: drop-shadow(0 24px 34px rgba(0, 0, 0, 0.65));
     }
 
-    /* Contact grounding shadow hovering over division line */
+    /* Soft Line Grounding Shadow */
     .boundary-shadow {
       position: absolute;
-      bottom: -16px;
-      left: 50%;
+      bottom: -14px;
+      left: 54%;
       transform: translateX(-50%);
-      width: 86%;
-      height: 36px;
-      background: radial-gradient(ellipse at center, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 55%, transparent 75%);
+      width: 80%;
+      height: 32px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 55%, transparent 75%);
       border-radius: 50%;
-      filter: blur(10px);
+      filter: blur(8px);
       z-index: 5;
       pointer-events: none;
     }
 
-    /* 30s Skin Tone Smooth Shift */
-    @keyframes realisticSkinCycle {
-      0%, 100% {
-        /* Deep rich dark brown skin tone */
-        filter: brightness(1) contrast(1.05) saturate(1.05) sepia(0);
-      }
-      33% {
-        /* Warm caramel / bronze skin tone */
-        filter: brightness(1.26) contrast(0.97) saturate(1.15) sepia(0.24) hue-rotate(-8deg);
-      }
-      66% {
-        /* Light nude / fair skin tone */
-        filter: brightness(1.42) contrast(0.94) saturate(0.88) sepia(0.14) hue-rotate(6deg);
-      }
-    }
-
-    /* Subtle Natural Hover Movement */
     @keyframes phoneHover {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-12px) rotate(1deg);
-      }
-      100% {
-        transform: translateY(-4px) rotate(-1deg);
-      }
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(-3px); }
     }
 
     /* CATEGORIES BAR */
@@ -372,14 +352,12 @@
 
     /* GENERAL SECTIONS */
     section { padding: 90px 0; position: relative; }
-    .section-head {
-      margin-bottom: 44px;
-    }
+    .section-head { margin-bottom: 40px; }
     .section-head h2 {
       font-family: Manrope, sans-serif;
-      font-size: clamp(32px, 3.8vw, 48px);
+      font-size: clamp(30px, 3.6vw, 46px);
       letter-spacing: -.045em;
-      line-height: 1.12;
+      line-height: 1.14;
       margin: 12px 0 0;
       font-weight: 800;
     }
@@ -393,41 +371,39 @@
     .eyebrow.dark { color: #727566; }
 
     /* "SEE THE DIFFERENCE" COMPARISON SECTION */
-    .comparison-section {
-      background: var(--paper);
-    }
+    .comparison-section { background: var(--paper); }
     .comparison-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 50px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
       align-items: center;
     }
     .comparison-value-props {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 14px;
       margin-top: 36px;
     }
     .prop-pill {
       background: #e9e8de;
-      padding: 18px 14px;
+      padding: 16px 14px;
       border-radius: 16px;
       text-align: left;
     }
     .prop-icon {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: var(--lime);
       display: grid;
       place-items: center;
-      margin-bottom: 12px;
-      font-size: 16px;
+      margin-bottom: 10px;
+      font-size: 15px;
       font-weight: 800;
     }
     .prop-pill span {
       display: block;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       line-height: 1.35;
       color: var(--ink);
@@ -508,7 +484,7 @@
       line-height: 1.45;
     }
 
-    /* PACKAGES & PRICING */
+    /* PACKAGES & PRICING SECTION - Perfectly Framed Header */
     .packages-section {
       background: #ecebe2;
     }
@@ -516,16 +492,27 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 40px;
+      gap: 24px;
+      margin-bottom: 38px;
+    }
+    .packages-intro-wrap .head-title-block {
+      max-width: 650px;
     }
     .curved-note {
-      font-family: 'DM Sans', cursive, sans-serif;
-      font-size: 14px;
-      color: #696b5d;
+      font-family: 'Caveat', cursive, sans-serif;
+      font-size: 19px;
+      line-height: 1.15;
+      color: #505244;
       text-align: right;
       transform: rotate(2deg);
+      flex-shrink: 0;
     }
-    .curved-note span { display: block; font-size: 20px; }
+    .curved-note span {
+      display: block;
+      font-size: 26px;
+      margin-top: 2px;
+      transform: rotate(25deg);
+    }
 
     .services-grid {
       display: grid;
@@ -820,11 +807,13 @@
     @media (max-width: 992px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
       }
+      .hero-text-col { max-width: 100%; }
       .hero-visual-col {
-        min-height: 500px;
-        margin-bottom: -50px;
+        justify-content: center;
+        min-height: 480px;
+        margin-bottom: -40px;
       }
       .comparison-grid {
         grid-template-columns: 1fr;
@@ -832,6 +821,11 @@
       .services-grid, .additional-grid {
         grid-template-columns: 1fr;
       }
+      .packages-intro-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .curved-note { text-align: left; }
       .process-grid, .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -846,7 +840,7 @@
       .comparison-value-props { grid-template-columns: 1fr; }
       .hero-copy { font-size: 15px; }
       .hand-phone-stage { max-width: 320px; }
-      .hero-visual-col { min-height: 440px; margin-bottom: -30px; }
+      .hero-visual-col { min-height: 400px; margin-bottom: -24px; }
     }
   </style>
 </head>
@@ -874,7 +868,7 @@
     <!-- HERO SECTION -->
     <section class="hero" id="home">
       <div class="wrap hero-grid">
-        <!-- Left: Text Content Column -->
+        <!-- Left Column: Headlines, Explanations, Buttons -->
         <div class="hero-text-col">
           <span class="eyebrow">Google Business Profile Refresh for Local Businesses</span>
           <h1>Refresh your Google Business Profile. <em>Make a better first impression.</em></h1>
@@ -893,7 +887,7 @@
           </div>
         </div>
 
-        <!-- Right: Photorealistic Hand & Smartphone Stage -->
+        <!-- Right Column: Nude Left Hand & Dark Brown Right Hand Holding Smartphone -->
         <div class="hero-visual-col" aria-label="Smartphone preview of a refreshed Google Business Profile">
           <div class="sticky-sticker">
             Real Google listings.<br>Real results.
@@ -901,173 +895,171 @@
           <div class="sparkle-burst" aria-hidden="true">✳</div>
           
           <div class="hand-phone-stage">
-            <svg class="skin-shifter" viewBox="0 0 500 700" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A realistic hand holding a smartphone showing 'This Could Be Your Business'">
+            <svg class="hero-mockup-svg" viewBox="0 0 540 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left nude hand and right dark brown hand holding phone">
               <defs>
-                <!-- Skin Rendering Gradients (High-Definition Anatomical Shading) -->
-                <radialGradient id="palmShade" cx="60%" cy="50%" r="65%">
-                  <stop offset="0%" stop-color="#734932" />
-                  <stop offset="45%" stop-color="#553421" />
-                  <stop offset="85%" stop-color="#3d2214" />
-                  <stop offset="100%" stop-color="#2a160c" />
-                </radialGradient>
-                <linearGradient id="armMuscle" x1="100%" y1="100%" x2="20%" y2="20%">
-                  <stop offset="0%" stop-color="#261309" />
-                  <stop offset="40%" stop-color="#462a1a" />
-                  <stop offset="80%" stop-color="#69412c" />
-                  <stop offset="100%" stop-color="#7e4f35" />
+                <!-- Nude / Fair Skin Gradients (Left Hand) -->
+                <linearGradient id="nudeArm" x1="0%" y1="100%" x2="70%" y2="0%">
+                  <stop offset="0%" stop-color="#dfa98e" />
+                  <stop offset="50%" stop-color="#eec2ab" />
+                  <stop offset="100%" stop-color="#f5d4c2" />
                 </linearGradient>
-                <linearGradient id="thumbSkin" x1="0%" y1="20%" x2="100%" y2="80%">
-                  <stop offset="0%" stop-color="#7e4f35" />
-                  <stop offset="50%" stop-color="#673e29" />
-                  <stop offset="85%" stop-color="#4d2c1c" />
-                  <stop offset="100%" stop-color="#341b0f" />
+                <linearGradient id="nudeThumb" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f6d3bf" />
+                  <stop offset="60%" stop-color="#e9b79e" />
+                  <stop offset="100%" stop-color="#cb8f72" />
                 </linearGradient>
 
-                <!-- Phone Hardware Gradients -->
-                <linearGradient id="metalBezel" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#65676b" />
-                  <stop offset="30%" stop-color="#1f2022" />
-                  <stop offset="70%" stop-color="#3a3c40" />
-                  <stop offset="100%" stop-color="#141517" />
+                <!-- Dark Brown Skin Gradients (Right Hand) -->
+                <linearGradient id="darkArm" x1="100%" y1="100%" x2="20%" y2="0%">
+                  <stop offset="0%" stop-color="#2d170d" />
+                  <stop offset="40%" stop-color="#462719" />
+                  <stop offset="80%" stop-color="#693e2a" />
+                  <stop offset="100%" stop-color="#834f36" />
                 </linearGradient>
-                <linearGradient id="glassGloss" x1="0%" y1="0%" x2="70%" y2="100%">
-                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14" />
-                  <stop offset="40%" stop-color="#ffffff" stop-opacity="0.04" />
+                <linearGradient id="darkFinger" x1="0%" y1="50%" x2="100%" y2="50%">
+                  <stop offset="0%" stop-color="#55301e" />
+                  <stop offset="100%" stop-color="#73422a" />
+                </linearGradient>
+
+                <!-- Phone Hardware Styling -->
+                <linearGradient id="phoneFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#43464d" />
+                  <stop offset="35%" stop-color="#1c1d20" />
+                  <stop offset="100%" stop-color="#101113" />
+                </linearGradient>
+                <linearGradient id="glassGloss" x1="0%" y1="0%" x2="60%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
+                  <stop offset="45%" stop-color="#ffffff" stop-opacity="0.03" />
                   <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
                 </linearGradient>
 
-                <!-- Multi-stage contact drop shadows -->
-                <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
-                  <feDropShadow dx="-4" dy="18" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>
+                <!-- Phone Drop Shadow -->
+                <filter id="phoneShadow" x="-15%" y="-15%" width="130%" height="130%">
+                  <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>
                 </filter>
-                <filter id="thumbShadow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feDropShadow dx="-3" dy="6" stdDeviation="7" flood-color="#000000" flood-opacity="0.45"/>
+                <filter id="thumbShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="-2" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
                 </filter>
 
-                <!-- Screen Clip Shape -->
-                <clipPath id="screenBezel">
-                  <rect x="114" y="66" width="272" height="526" rx="36" />
+                <clipPath id="screenClip">
+                  <rect x="156" y="58" width="244" height="490" rx="34" />
                 </clipPath>
               </defs>
 
-              <!-- Forearm entering naturally from bottom right corner -->
-              <path d="M500 700 L370 510 C360 450 365 370 380 300 C395 240 405 260 410 320 L500 450 Z" fill="url(#armMuscle)" />
-              <path d="M490 680 C440 590 390 480 376 430 C366 390 372 340 382 300 C390 270 402 285 410 330 L495 480 Z" fill="url(#palmShade)" opacity="0.65" />
-
-              <!-- Back right-hand gripping fingers wrapping the chassis -->
-              <!-- Index / Middle / Ring finger curves -->
-              <g filter="url(#softShadow)">
-                <path d="M382 245 C394 246 404 260 402 280 C400 295 388 304 374 300 C368 298 368 285 372 265 C375 250 378 245 382 245 Z" fill="#583421" />
-                <path d="M386 305 C398 306 408 320 406 340 C404 355 392 364 378 360 C372 358 372 345 376 325 C379 310 382 305 386 305 Z" fill="#52301e" />
-                <path d="M382 365 C394 366 404 380 402 400 C400 415 388 424 374 420 C368 418 368 405 372 385 C375 370 378 365 382 365 Z" fill="#4a2a19" />
-                <!-- Fingernails -->
-                <ellipse cx="395" cy="272" rx="4.5" ry="7" fill="#8e5942" opacity="0.75" />
-                <ellipse cx="399" cy="332" rx="4.5" ry="7" fill="#88543d" opacity="0.75" />
-                <ellipse cx="395" cy="392" rx="4.5" ry="7" fill="#7d4b35" opacity="0.75" />
+              <!-- LEFT NUDE HAND & FOREARM (Partially cut off entering from bottom-left) -->
+              <g>
+                <path d="M0 680 L90 520 C110 470 120 400 135 340 C145 300 160 310 165 350 L140 500 L0 680 Z" fill="url(#nudeArm)" />
+                <!-- Left palm edge wrapping behind phone -->
+                <path d="M90 520 C115 460 130 380 148 335 C155 315 168 330 170 360 L145 530 Z" fill="#cf9c82" opacity="0.6" />
               </g>
 
-              <!-- Smartphone Hardware Construction -->
-              <g filter="url(#softShadow)">
-                <!-- Outer Bezel Body -->
-                <rect x="106" y="58" width="288" height="542" rx="42" fill="url(#metalBezel)" stroke="#3f4247" stroke-width="2.5"/>
-                <!-- Speaker Aperture Notch -->
-                <rect x="220" y="70" width="60" height="5" rx="2.5" fill="#080808" />
-                <circle cx="206" cy="72.5" r="3" fill="#15171a" />
-                <!-- Screen Glass Surface -->
-                <rect x="114" y="66" width="272" height="526" rx="36" fill="#ffffff" />
+              <!-- RIGHT DARK BROWN HAND & FOREARM (Bleeding off bottom-right screen) -->
+              <g>
+                <!-- Forearm going off bottom edge -->
+                <path d="M540 680 L425 500 C410 440 415 360 425 295 C435 240 448 260 455 315 L540 440 Z" fill="url(#darkArm)" />
+                <!-- Fingers resting along right bezel -->
+                <path d="M420 230 C436 230 446 244 444 265 C442 280 430 288 416 284 C408 282 408 268 412 250 C414 235 417 230 420 230 Z" fill="url(#darkFinger)" />
+                <path d="M424 290 C440 290 450 304 448 325 C446 340 434 348 420 344 C412 342 412 328 416 310 C418 295 421 290 424 290 Z" fill="url(#darkFinger)" />
+                <path d="M420 350 C436 350 446 364 444 385 C442 400 430 408 416 404 C408 402 408 388 412 370 C414 355 417 350 420 350 Z" fill="url(#darkFinger)" />
+                <!-- Right fingernail details -->
+                <ellipse cx="438" cy="256" rx="4" ry="6" fill="#8f5c43" opacity="0.75" />
+                <ellipse cx="442" cy="316" rx="4" ry="6" fill="#89563e" opacity="0.75" />
+                <ellipse cx="438" cy="376" rx="4" ry="6" fill="#7f4e37" opacity="0.75" />
               </g>
 
-              <!-- SCREEN MOCKUP: Google Business Profile Interface -->
-              <g clip-path="url(#screenBezel)">
-                <!-- Header / Search row -->
-                <rect x="114" y="66" width="272" height="54" fill="#ffffff" />
-                <text x="132" y="99" font-family="'DM Sans', sans-serif" font-size="16" fill="#5f6368">←</text>
-                <text x="222" y="100" font-family="'Manrope', sans-serif" font-weight="800" font-size="16.5" fill="#4285F4">G<tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan></text>
-                <text x="352" y="98" font-family="'DM Sans', sans-serif" font-size="16" fill="#5f6368">⋮</text>
+              <!-- PHONE HARDWARE -->
+              <g filter="url(#phoneShadow)">
+                <rect x="148" y="50" width="260" height="506" rx="40" fill="url(#phoneFrame)" stroke="#3f4247" stroke-width="2.5"/>
+                <!-- Speaker notch -->
+                <rect x="250" y="62" width="56" height="5" rx="2.5" fill="#080808" />
+                <circle cx="238" cy="64.5" r="3" fill="#141517" />
+                <!-- Screen Surface -->
+                <rect x="156" y="58" width="244" height="490" rx="34" fill="#ffffff" />
+              </g>
 
-                <!-- Profile Cover Photos -->
-                <rect x="126" y="128" width="162" height="102" rx="10" fill="#435946" />
-                <!-- Facade Graphic -->
-                <path d="M140 196 L195 155 L260 196 Z" fill="#2d3d30" opacity="0.65" />
-                <rect x="156" y="178" width="22" height="28" rx="2" fill="#dce2ce" />
-                <rect x="210" y="172" width="38" height="34" rx="2" fill="#c3ceae" />
-                <rect x="294" y="128" width="82" height="48" rx="8" fill="#d9ad80" />
-                <rect x="294" y="182" width="82" height="48" rx="8" fill="#e7caa9" />
+              <!-- SCREEN CONTENT: Google Business Profile (This Could Be Your Business) -->
+              <g clip-path="url(#screenClip)">
+                <!-- Search header bar -->
+                <rect x="156" y="58" width="244" height="52" fill="#ffffff" />
+                <text x="172" y="90" font-family="'DM Sans', sans-serif" font-size="15" fill="#5f6368">←</text>
+                <text x="252" y="91" font-family="'Manrope', sans-serif" font-weight="800" font-size="15.5" fill="#4285F4">G<tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan></text>
+                <text x="372" y="90" font-family="'DM Sans', sans-serif" font-size="15" fill="#5f6368">⋮</text>
 
-                <!-- Business Title and Ratings -->
-                <text x="128" y="250" font-family="'Manrope', sans-serif" font-weight="800" font-size="15" fill="#202124">This Could Be Your Business</text>
-                <text x="128" y="267" font-family="'DM Sans', sans-serif" font-weight="700" font-size="12" fill="#e37400">4.7 ★★★★★</text>
-                <text x="198" y="267" font-family="'DM Sans', sans-serif" font-size="11.5" fill="#70757a">(128)</text>
-                <text x="128" y="284" font-family="'DM Sans', sans-serif" font-size="11.5" fill="#70757a">Local Business · <tspan fill="#188038" font-weight="700">Open</tspan></text>
+                <!-- Cover Photos -->
+                <rect x="168" y="116" width="144" height="92" rx="8" fill="#4a5f4c" />
+                <path d="M180 178 L230 142 L290 178 Z" fill="#334535" opacity="0.7" />
+                <rect x="194" y="162" width="20" height="24" rx="2" fill="#dce2ce" />
+                <rect x="244" y="156" width="34" height="30" rx="2" fill="#c3ceae" />
+                <rect x="318" y="116" width="72" height="43" rx="7" fill="#d9ad80" />
+                <rect x="318" y="165" width="72" height="43" rx="7" fill="#e7caa9" />
+
+                <!-- Profile Info -->
+                <text x="170" y="228" font-family="'Manrope', sans-serif" font-weight="800" font-size="13.5" fill="#202124">This Could Be Your Business</text>
+                <text x="170" y="244" font-family="'DM Sans', sans-serif" font-weight="700" font-size="11" fill="#e37400">4.7 ★★★★★</text>
+                <text x="234" y="244" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#70757a">(128)</text>
+                <text x="170" y="259" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#70757a">Local Business · <tspan fill="#188038" font-weight="700">Open</tspan></text>
 
                 <!-- Navigation Tabs -->
-                <text x="128" y="312" font-family="'Manrope', sans-serif" font-size="11" font-weight="800" fill="#1a73e8">OVERVIEW</text>
-                <line x1="128" y1="318" x2="190" y2="318" stroke="#1a73e8" stroke-width="2.5" />
-                <text x="202" y="312" font-family="'Manrope', sans-serif" font-size="11" font-weight="600" fill="#70757a">UPDATES</text>
-                <text x="264" y="312" font-family="'Manrope', sans-serif" font-size="11" font-weight="600" fill="#70757a">REVIEWS</text>
-                <text x="326" y="312" font-family="'Manrope', sans-serif" font-size="11" font-weight="600" fill="#70757a">PHOTOS</text>
-                <line x1="126" y1="320" x2="376" y2="320" stroke="#dadce0" stroke-width="1" />
+                <text x="170" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="800" fill="#1a73e8">OVERVIEW</text>
+                <line x1="170" y1="289" x2="225" y2="289" stroke="#1a73e8" stroke-width="2.5" />
+                <text x="236" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">UPDATES</text>
+                <text x="290" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">REVIEWS</text>
+                <text x="344" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">PHOTOS</text>
+                <line x1="168" y1="291" x2="388" y2="291" stroke="#e0e0e0" stroke-width="1" />
 
-                <!-- Action Circular Buttons -->
-                <g transform="translate(136, 332)">
-                  <circle cx="22" cy="18" r="16" fill="#e8f0fe"/>
-                  <text x="22" y="23" font-size="13" fill="#1a73e8" text-anchor="middle">📞</text>
-                  <text x="22" y="44" font-family="'DM Sans', sans-serif" font-size="9" font-weight="700" fill="#1a73e8" text-anchor="middle">CALL</text>
+                <!-- Call / Directions / Website Action Pills -->
+                <g transform="translate(176, 303)">
+                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
+                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">📞</text>
+                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">CALL</text>
                 </g>
-                <g transform="translate(204, 332)">
-                  <circle cx="22" cy="18" r="16" fill="#e8f0fe"/>
-                  <text x="22" y="23" font-size="13" fill="#1a73e8" text-anchor="middle">↗</text>
-                  <text x="22" y="44" font-family="'DM Sans', sans-serif" font-size="9" font-weight="700" fill="#1a73e8" text-anchor="middle">DIRECTIONS</text>
+                <g transform="translate(238, 303)">
+                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
+                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">↗</text>
+                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">DIRECTIONS</text>
                 </g>
-                <g transform="translate(276, 332)">
-                  <circle cx="22" cy="18" r="16" fill="#e8f0fe"/>
-                  <text x="22" y="23" font-size="13" fill="#1a73e8" text-anchor="middle">🌐</text>
-                  <text x="22" y="44" font-family="'DM Sans', sans-serif" font-size="9" font-weight="700" fill="#1a73e8" text-anchor="middle">WEBSITE</text>
-                </g>
-
-                <!-- Location & Hours Data -->
-                <line x1="126" y1="392" x2="376" y2="392" stroke="#eeeeee" stroke-width="1" />
-                <text x="132" y="416" font-size="12" fill="#1a73e8">📍</text>
-                <text x="154" y="414" font-family="'DM Sans', sans-serif" font-size="11.5" fill="#3c4043">123 Main Street</text>
-                <text x="154" y="428" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#70757a">Your City, ST 12345</text>
-
-                <line x1="126" y1="444" x2="376" y2="444" stroke="#eeeeee" stroke-width="1" />
-                <text x="132" y="466" font-size="12" fill="#188038">🕒</text>
-                <text x="154" y="465" font-family="'DM Sans', sans-serif" font-size="11.5" fill="#188038" font-weight="700">Open <tspan font-weight="400" fill="#70757a">· Closes 8 PM</tspan></text>
-
-                <!-- Live Popular Times Graph -->
-                <text x="132" y="502" font-family="'Manrope', sans-serif" font-weight="700" font-size="10.5" fill="#3c4043">Popular times</text>
-                <text x="230" y="502" font-family="'DM Sans', sans-serif" font-size="9" fill="#ea4335">● Live: Busier than usual</text>
-                
-                <g fill="#8ab4f8" transform="translate(132, 514)">
-                  <rect x="0" y="24" width="9" height="16" rx="2"/>
-                  <rect x="14" y="20" width="9" height="20" rx="2"/>
-                  <rect x="28" y="14" width="9" height="26" rx="2"/>
-                  <rect x="42" y="8" width="9" height="32" rx="2"/>
-                  <rect x="56" y="2" width="9" height="38" rx="2" fill="#4285f4"/>
-                  <rect x="70" y="6" width="9" height="34" rx="2"/>
-                  <rect x="84" y="14" width="9" height="26" rx="2"/>
-                  <rect x="98" y="22" width="9" height="18" rx="2"/>
+                <g transform="translate(304, 303)">
+                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
+                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">🌐</text>
+                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">WEBSITE</text>
                 </g>
 
-                <!-- Diagonal Screen Glass Sheen -->
-                <polygon points="114,66 260,66 180,592 114,592" fill="url(#glassGloss)" />
+                <!-- Location & Info Rows -->
+                <line x1="168" y1="358" x2="388" y2="358" stroke="#f0f0f0" stroke-width="1" />
+                <text x="174" y="380" font-size="11" fill="#1a73e8">📍</text>
+                <text x="194" y="378" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#3c4043">123 Main Street, City ST</text>
+
+                <line x1="168" y1="400" x2="388" y2="400" stroke="#f0f0f0" stroke-width="1" />
+                <text x="174" y="420" font-size="11" fill="#188038">🕒</text>
+                <text x="194" y="419" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#188038" font-weight="700">Open <tspan font-weight="400" fill="#70757a">· Closes 8 PM</tspan></text>
+
+                <!-- Popular Times Mini Bar Chart -->
+                <text x="174" y="452" font-family="'Manrope', sans-serif" font-weight="700" font-size="9.5" fill="#3c4043">Popular times</text>
+                <text x="260" y="452" font-family="'DM Sans', sans-serif" font-size="8.5" fill="#ea4335">● Live: Busier</text>
+                <g fill="#8ab4f8" transform="translate(174, 462)">
+                  <rect x="0" y="20" width="8" height="14" rx="2"/>
+                  <rect x="12" y="16" width="8" height="18" rx="2"/>
+                  <rect x="24" y="12" width="8" height="22" rx="2"/>
+                  <rect x="36" y="6" width="8" height="28" rx="2"/>
+                  <rect x="48" y="0" width="8" height="34" rx="2" fill="#4285f4"/>
+                  <rect x="60" y="5" width="8" height="29" rx="2"/>
+                  <rect x="72" y="11" width="8" height="23" rx="2"/>
+                  <rect x="84" y="18" width="8" height="16" rx="2"/>
+                </g>
+
+                <!-- Glass Sheen Overlay -->
+                <polygon points="156,58 280,58 210,548 156,548" fill="url(#glassGloss)" />
               </g>
 
-              <!-- Natural Ergonomic Thumb resting firmly over phone bezel -->
+              <!-- LEFT NUDE THUMB OVER BEZEL (Resting cleanly on left border) -->
               <g filter="url(#thumbShadow)">
-                <!-- Base fleshy thumb mound -->
-                <path d="M72 430 C86 350 112 316 166 328 C182 332 198 354 190 376 C182 396 156 414 120 436 C96 452 80 472 64 502 Z" fill="url(#thumbSkin)" />
-                <!-- Shadow crease under knuckle -->
-                <path d="M120 370 C136 376 154 374 166 366" stroke="#442313" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
-                <path d="M126 382 C140 388 152 386 162 378" stroke="#442313" stroke-width="1.8" stroke-linecap="round" opacity="0.45" />
-                <!-- Anatomical Thumb Nail highlight -->
-                <path d="M168 338 C175 340 184 350 182 360 C179 366 172 368 166 362 C162 358 163 346 168 338 Z" fill="#b97c64" opacity="0.75" />
-                <path d="M172 342 C176 344 180 350 179 356" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity="0.5" />
+                <path d="M110 400 C120 330 145 295 195 308 C210 312 222 332 216 352 C210 370 186 386 154 406 C134 420 120 440 106 465 Z" fill="url(#nudeThumb)" />
+                <path d="M152 355 C166 360 180 358 190 350" stroke="#b67f65" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+                <path d="M196 322 C202 324 209 332 208 340 C206 345 200 346 195 342 C192 338 193 328 196 322 Z" fill="#f8dbcf" opacity="0.8" />
               </g>
             </svg>
 
-            <!-- Grounding Shadow resting on separation border line -->
+            <!-- Floating Grounding Shadow along dividing seam -->
             <div class="boundary-shadow" aria-hidden="true"></div>
           </div>
         </div>
@@ -1152,11 +1144,11 @@
       </div>
     </section>
 
-    <!-- PACKAGES SECTION -->
+    <!-- PACKAGES & PRICING SECTION -->
     <section class="packages-section" id="services">
       <div class="wrap">
         <div class="packages-intro-wrap">
-          <div>
+          <div class="head-title-block">
             <span class="eyebrow dark">Google Business Profile Refresh Packages</span>
             <h2>Choose the package that fits your business.</h2>
           </div>
@@ -1167,7 +1159,7 @@
         </div>
 
         <div class="services-grid">
-          <!-- Essential -->
+          <!-- Essential Refresh -->
           <article class="service-card">
             <span class="eyebrow dark">Starter</span>
             <h3>Essential Refresh</h3>
@@ -1181,7 +1173,7 @@
             <a class="btn outline choose-package" href="#contact" data-package="Essential Refresh — $149">Get started <span>→</span></a>
           </article>
 
-          <!-- Growth / Featured -->
+          <!-- Growth Refresh -->
           <article class="service-card featured">
             <span class="popular">Most Popular</span>
             <span class="eyebrow dark">Versatile</span>
@@ -1197,7 +1189,7 @@
             <a class="btn lime choose-package" href="#contact" data-package="Growth Refresh — $249">Get started <span>→</span></a>
           </article>
 
-          <!-- Premium -->
+          <!-- Premium Refresh -->
           <article class="service-card">
             <span class="eyebrow dark">Comprehensive</span>
             <h3>Premium Refresh</h3>
@@ -1262,7 +1254,7 @@
       </div>
     </section>
 
-    <!-- BOTTOM FAST CTA BANNER -->
+    <!-- FAST CTA BANNER -->
     <div class="cta-banner">
       <div class="wrap cta-banner-inner">
         <div class="cta-banner-text">
@@ -1276,7 +1268,7 @@
       </div>
     </div>
 
-    <!-- CONTACT & INQUIRY FORM SECTION -->
+    <!-- CONTACT FORM -->
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
         <div>
@@ -1290,7 +1282,6 @@
           </div>
         </div>
 
-        <!-- FormSubmit targeting spotonvisuals@gmail.com -->
         <form id="contact-form" action="https://formsubmit.co/spotonvisuals@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New Spot On Visuals website inquiry">
           <input type="hidden" name="_template" value="table">
@@ -1388,10 +1379,8 @@
   </footer>
 
   <script>
-    // Copyright Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Package Selector Sync
     document.querySelectorAll(".choose-package").forEach((link) => {
       link.addEventListener("click", () => {
         const packageSelect = document.getElementById("package");
