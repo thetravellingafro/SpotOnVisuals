@@ -27,7 +27,7 @@
       --radius-sm: 12px;
       --radius: 20px;
       --radius-lg: 26px;
-      --max: 1040px;
+      --max: 1100px;
     }
 
     * { box-sizing: border-box; }
@@ -167,19 +167,19 @@
       color: white;
       position: relative;
       overflow: visible;
-      padding-top: 44px;
-      padding-bottom: 20px;
+      padding-top: 50px;
+      padding-bottom: 24px;
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 430px;
+      grid-template-columns: 1fr 420px;
       align-items: center;
-      gap: 32px;
+      gap: 40px;
       position: relative;
     }
     .hero-text-col {
       z-index: 5;
-      max-width: 520px;
+      max-width: 530px;
     }
     .eyebrow {
       display: inline-flex;
@@ -202,7 +202,7 @@
       font-family: Manrope, sans-serif;
       letter-spacing: -.05em;
       line-height: 1.05;
-      font-size: clamp(36px, 4vw, 58px);
+      font-size: clamp(36px, 4vw, 56px);
       margin: 0 0 20px;
       font-weight: 800;
     }
@@ -242,70 +242,234 @@
     .dots span:first-child { margin-left: 0; background: #e59d74; }
     .dots span:nth-child(2) { background: #96afc9; }
 
-    /* HERO VISUAL AREA (DUAL HANDS + HOVERING PHONE) */
+    /* HERO FLOATING IPHONE SECTION */
     .hero-visual-col {
       position: relative;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       height: 100%;
-      min-height: 520px;
-      margin-bottom: -58px;
+      min-height: 560px;
+      margin-bottom: -64px; /* Hangs gracefully across the bottom line */
       z-index: 10;
     }
 
     .sticky-sticker {
       position: absolute;
-      top: 14px;
-      left: 12px;
+      top: 6px;
+      left: 10px;
       background: var(--lime);
       color: var(--dark);
       font-family: Manrope, sans-serif;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 800;
       line-height: 1.25;
-      padding: 10px 14px;
+      padding: 10px 15px;
       border-radius: 12px;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.4);
       transform: rotate(-7deg);
       z-index: 25;
       pointer-events: none;
     }
     .sparkle-burst {
       position: absolute;
-      top: 4px;
-      right: 18px;
+      top: 0;
+      right: 12px;
       color: var(--lime);
-      font-size: 38px;
+      font-size: 40px;
       line-height: 1;
       opacity: 0.9;
       user-select: none;
     }
 
-    .hand-phone-stage {
+    .phone-mockup-wrapper {
       position: relative;
       width: 100%;
-      max-width: 420px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      max-width: 370px;
       animation: phoneHover 7s ease-in-out infinite alternate;
     }
 
-    .hero-mockup-svg {
+    /* iPhone Chassis */
+    .iphone-case {
       width: 100%;
-      height: auto;
-      display: block;
-      filter: drop-shadow(0 24px 34px rgba(0, 0, 0, 0.65));
+      background: #1e1f23;
+      border-radius: 46px;
+      padding: 12px;
+      box-shadow: 
+        0 0 0 3px #3d4047,
+        0 26px 50px -6px rgba(0,0,0,0.7),
+        0 12px 24px rgba(0,0,0,0.45);
+      position: relative;
+      color: var(--ink);
     }
 
-    .boundary-shadow {
+    .iphone-dynamic-island {
       position: absolute;
-      bottom: -14px;
+      top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80%;
-      height: 30px;
+      width: 78px;
+      height: 18px;
+      background: #000;
+      border-radius: 12px;
+      z-index: 30;
+    }
+
+    .iphone-screen {
+      background: #ffffff;
+      border-radius: 36px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      font-size: 11px;
+      box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
+    }
+
+    .screen-header {
+      padding: 14px 16px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #f0f0ea;
+      margin-top: 14px;
+    }
+    .google-logo {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+    .google-logo span:nth-child(1) { color: #4285F4; }
+    .google-logo span:nth-child(2) { color: #EA4335; }
+    .google-logo span:nth-child(3) { color: #FBBC05; }
+    .google-logo span:nth-child(4) { color: #4285F4; }
+    .google-logo span:nth-child(5) { color: #34A853; }
+    .google-logo span:nth-child(6) { color: #EA4335; }
+
+    /* Food Photos Grid inside Phone */
+    .food-photos-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 4px;
+      padding: 8px 10px;
+      height: 130px;
+    }
+    .food-photos-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 6px;
+    }
+    .food-subgrid {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 4px;
+      height: 100%;
+    }
+
+    /* Profile Content */
+    .profile-info {
+      padding: 8px 14px 10px;
+    }
+    .profile-info h3 {
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      margin: 0 0 2px;
+      color: #1a1b1d;
+    }
+    .stars-line {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      margin-bottom: 4px;
+    }
+    .stars-gold {
+      color: #e37400;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .review-count {
+      color: #5f6368;
+    }
+    .biz-category {
+      color: #5f6368;
+      font-size: 10.5px;
+      margin-bottom: 8px;
+    }
+    .biz-category strong {
+      color: #188038;
+    }
+
+    /* Actions */
+    .profile-actions {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .action-btn {
+      flex: 1;
+      padding: 6px 0;
+      text-align: center;
+      background: #f1f3f4;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #1a73e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    /* Better Reviews Section in Phone */
+    .reviews-preview-box {
+      background: #f8f9fa;
+      border-top: 1px solid #ebece8;
+      padding: 10px 14px 12px;
+    }
+    .review-quote-head {
+      font-weight: 800;
+      font-family: Manrope, sans-serif;
+      font-size: 10.5px;
+      color: #3c4043;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .review-pill {
+      background: #e6f4ea;
+      color: #137333;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 9px;
+      font-weight: 800;
+    }
+    .review-bubble {
+      font-size: 10.5px;
+      line-height: 1.35;
+      color: #4d5156;
+      font-style: italic;
+    }
+    .reviewer-meta {
+      font-size: 9.5px;
+      color: #70757a;
+      margin-top: 3px;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    /* Shadow underneath phone hovering over dividing border */
+    .boundary-shadow {
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 76%;
+      height: 32px;
       background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 55%, transparent 75%);
       border-radius: 50%;
       filter: blur(8px);
@@ -315,8 +479,8 @@
 
     @keyframes phoneHover {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(-3px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(-4px); }
     }
 
     /* CATEGORIES BAR */
@@ -841,7 +1005,7 @@
       .hero-text-col { max-width: 100%; }
       .hero-visual-col {
         justify-content: center;
-        min-height: 460px;
+        min-height: 480px;
         margin-bottom: -36px;
       }
       .comparison-grid { grid-template-columns: 1fr; }
@@ -864,8 +1028,8 @@
       .comparison-cards { grid-template-columns: 1fr; }
       .comparison-value-props { grid-template-columns: 1fr; }
       .hero-copy { font-size: 14.5px; }
-      .hand-phone-stage { max-width: 310px; }
-      .hero-visual-col { min-height: 380px; margin-bottom: -20px; }
+      .phone-mockup-wrapper { max-width: 320px; }
+      .hero-visual-col { min-height: 420px; margin-bottom: -20px; }
     }
   </style>
 </head>
@@ -912,163 +1076,70 @@
           </div>
         </div>
 
-        <!-- Right: Nude Left Hand & Dark Brown Right Hand Holding Smartphone Mockup -->
+        <!-- Right: Floating iPhone Vector with Google Profile Mockup -->
         <div class="hero-visual-col" aria-label="Smartphone preview of a refreshed Google Business Profile">
           <div class="sticky-sticker">
             Real Google listings.<br>Real results.
           </div>
           <div class="sparkle-burst" aria-hidden="true">✳</div>
           
-          <div class="hand-phone-stage">
-            <svg class="hero-mockup-svg" viewBox="0 0 540 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left nude hand and right dark brown hand holding phone">
-              <defs>
-                <!-- Nude Skin Gradients (Left Hand) -->
-                <linearGradient id="nudeArm" x1="0%" y1="100%" x2="70%" y2="0%">
-                  <stop offset="0%" stop-color="#dfa98e" />
-                  <stop offset="50%" stop-color="#eec2ab" />
-                  <stop offset="100%" stop-color="#f5d4c2" />
-                </linearGradient>
-                <linearGradient id="nudeThumb" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#f6d3bf" />
-                  <stop offset="60%" stop-color="#e9b79e" />
-                  <stop offset="100%" stop-color="#cb8f72" />
-                </linearGradient>
+          <div class="phone-mockup-wrapper">
+            <div class="iphone-case">
+              <div class="iphone-dynamic-island"></div>
+              
+              <div class="iphone-screen">
+                <!-- Search header -->
+                <div class="screen-header">
+                  <span style="font-size:14px;color:#5f6368;">←</span>
+                  <div class="google-logo">
+                    <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+                  </div>
+                  <span style="font-size:14px;color:#5f6368;">⋮</span>
+                </div>
 
-                <!-- Dark Brown Skin Gradients (Right Hand) -->
-                <linearGradient id="darkArm" x1="100%" y1="100%" x2="20%" y2="0%">
-                  <stop offset="0%" stop-color="#2d170d" />
-                  <stop offset="40%" stop-color="#462719" />
-                  <stop offset="80%" stop-color="#693e2a" />
-                  <stop offset="100%" stop-color="#834f36" />
-                </linearGradient>
-                <linearGradient id="darkFinger" x1="0%" y1="50%" x2="100%" y2="50%">
-                  <stop offset="0%" stop-color="#55301e" />
-                  <stop offset="100%" stop-color="#73422a" />
-                </linearGradient>
+                <!-- Food Photos Grid -->
+                <div class="food-photos-grid">
+                  <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Fresh wood fired pizza">
+                  <div class="food-subgrid">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80" alt="Gourmet smashburger">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=300&q=80" alt="Restaurant interior atmosphere">
+                  </div>
+                </div>
 
-                <!-- Phone Hardware Styling -->
-                <linearGradient id="phoneFrame" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#43464d" />
-                  <stop offset="35%" stop-color="#1c1d20" />
-                  <stop offset="100%" stop-color="#101113" />
-                </linearGradient>
-                <linearGradient id="glassGloss" x1="0%" y1="0%" x2="60%" y2="100%">
-                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
-                  <stop offset="45%" stop-color="#ffffff" stop-opacity="0.03" />
-                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-                </linearGradient>
+                <!-- Profile Information -->
+                <div class="profile-info">
+                  <h3>This Could Be Your Business</h3>
+                  <div class="stars-line">
+                    <span class="stars-gold">4.7 ★★★★★</span>
+                    <span class="review-count">(128)</span>
+                  </div>
+                  <div class="biz-category">
+                    Local Business · <strong>Open</strong> · Closes 9 PM
+                  </div>
 
-                <filter id="phoneShadow" x="-15%" y="-15%" width="130%" height="130%">
-                  <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>
-                </filter>
-                <filter id="thumbShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="-2" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
-                </filter>
+                  <!-- Action Buttons -->
+                  <div class="profile-actions">
+                    <div class="action-btn"><span>📞</span> Call</div>
+                    <div class="action-btn"><span>↗</span> Directions</div>
+                    <div class="action-btn"><span>🌐</span> Website</div>
+                  </div>
+                </div>
 
-                <clipPath id="screenClip">
-                  <rect x="156" y="58" width="244" height="490" rx="34" />
-                </clipPath>
-              </defs>
+                <!-- Better Reviews Bottom Card -->
+                <div class="reviews-preview-box">
+                  <div class="review-quote-head">
+                    <span>Customer Review</span>
+                    <span class="review-pill">5.0 ★ Highly Rated</span>
+                  </div>
+                  <div class="review-bubble">
+                    "The fresh photos brought us right in! Food tasted just as incredible as it looked online. Outstanding customer service."
+                  </div>
+                  <div class="reviewer-meta">— Verified Local Guide</div>
+                </div>
+              </div>
+            </div>
 
-              <!-- LEFT NUDE HAND & FOREARM (Cut off entering from bottom-left) -->
-              <g>
-                <path d="M0 680 L90 520 C110 470 120 400 135 340 C145 300 160 310 165 350 L140 500 L0 680 Z" fill="url(#nudeArm)" />
-                <path d="M90 520 C115 460 130 380 148 335 C155 315 168 330 170 360 L145 530 Z" fill="#cf9c82" opacity="0.6" />
-              </g>
-
-              <!-- RIGHT DARK BROWN HAND & FOREARM (Bleeding off bottom-right edge) -->
-              <g>
-                <path d="M540 680 L425 500 C410 440 415 360 425 295 C435 240 448 260 455 315 L540 440 Z" fill="url(#darkArm)" />
-                <path d="M420 230 C436 230 446 244 444 265 C442 280 430 288 416 284 C408 282 408 268 412 250 C414 235 417 230 420 230 Z" fill="url(#darkFinger)" />
-                <path d="M424 290 C440 290 450 304 448 325 C446 340 434 348 420 344 C412 342 412 328 416 310 C418 295 421 290 424 290 Z" fill="url(#darkFinger)" />
-                <path d="M420 350 C436 350 446 364 444 385 C442 400 430 408 416 404 C408 402 408 388 412 370 C414 355 417 350 420 350 Z" fill="url(#darkFinger)" />
-                <ellipse cx="438" cy="256" rx="4" ry="6" fill="#8f5c43" opacity="0.75" />
-                <ellipse cx="442" cy="316" rx="4" ry="6" fill="#89563e" opacity="0.75" />
-                <ellipse cx="438" cy="376" rx="4" ry="6" fill="#7f4e37" opacity="0.75" />
-              </g>
-
-              <!-- PHONE HARDWARE -->
-              <g filter="url(#phoneShadow)">
-                <rect x="148" y="50" width="260" height="506" rx="40" fill="url(#phoneFrame)" stroke="#3f4247" stroke-width="2.5"/>
-                <rect x="250" y="62" width="56" height="5" rx="2.5" fill="#080808" />
-                <circle cx="238" cy="64.5" r="3" fill="#141517" />
-                <rect x="156" y="58" width="244" height="490" rx="34" fill="#ffffff" />
-              </g>
-
-              <!-- SCREEN CONTENT: Google Business Profile (This Could Be Your Business) -->
-              <g clip-path="url(#screenClip)">
-                <rect x="156" y="58" width="244" height="52" fill="#ffffff" />
-                <text x="172" y="90" font-family="'DM Sans', sans-serif" font-size="15" fill="#5f6368">←</text>
-                <text x="252" y="91" font-family="'Manrope', sans-serif" font-weight="800" font-size="15.5" fill="#4285F4">G<tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan></text>
-                <text x="372" y="90" font-family="'DM Sans', sans-serif" font-size="15" fill="#5f6368">⋮</text>
-
-                <rect x="168" y="116" width="144" height="92" rx="8" fill="#4a5f4c" />
-                <path d="M180 178 L230 142 L290 178 Z" fill="#334535" opacity="0.7" />
-                <rect x="194" y="162" width="20" height="24" rx="2" fill="#dce2ce" />
-                <rect x="244" y="156" width="34" height="30" rx="2" fill="#c3ceae" />
-                <rect x="318" y="116" width="72" height="43" rx="7" fill="#d9ad80" />
-                <rect x="318" y="165" width="72" height="43" rx="7" fill="#e7caa9" />
-
-                <text x="170" y="228" font-family="'Manrope', sans-serif" font-weight="800" font-size="13.5" fill="#202124">This Could Be Your Business</text>
-                <text x="170" y="244" font-family="'DM Sans', sans-serif" font-weight="700" font-size="11" fill="#e37400">4.7 ★★★★★</text>
-                <text x="234" y="244" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#70757a">(128)</text>
-                <text x="170" y="259" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#70757a">Local Business · <tspan fill="#188038" font-weight="700">Open</tspan></text>
-
-                <text x="170" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="800" fill="#1a73e8">OVERVIEW</text>
-                <line x1="170" y1="289" x2="225" y2="289" stroke="#1a73e8" stroke-width="2.5" />
-                <text x="236" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">UPDATES</text>
-                <text x="290" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">REVIEWS</text>
-                <text x="344" y="284" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#70757a">PHOTOS</text>
-                <line x1="168" y1="291" x2="388" y2="291" stroke="#e0e0e0" stroke-width="1" />
-
-                <g transform="translate(176, 303)">
-                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
-                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">📞</text>
-                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">CALL</text>
-                </g>
-                <g transform="translate(238, 303)">
-                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
-                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">↗</text>
-                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">DIRECTIONS</text>
-                </g>
-                <g transform="translate(304, 303)">
-                  <circle cx="20" cy="16" r="14" fill="#e8f0fe"/>
-                  <text x="20" y="20" font-size="12" fill="#1a73e8" text-anchor="middle">🌐</text>
-                  <text x="20" y="40" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1a73e8" text-anchor="middle">WEBSITE</text>
-                </g>
-
-                <line x1="168" y1="358" x2="388" y2="358" stroke="#f0f0f0" stroke-width="1" />
-                <text x="174" y="380" font-size="11" fill="#1a73e8">📍</text>
-                <text x="194" y="378" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#3c4043">123 Main Street, City ST</text>
-
-                <line x1="168" y1="400" x2="388" y2="400" stroke="#f0f0f0" stroke-width="1" />
-                <text x="174" y="420" font-size="11" fill="#188038">🕒</text>
-                <text x="194" y="419" font-family="'DM Sans', sans-serif" font-size="10.5" fill="#188038" font-weight="700">Open <tspan font-weight="400" fill="#70757a">· Closes 8 PM</tspan></text>
-
-                <text x="174" y="452" font-family="'Manrope', sans-serif" font-weight="700" font-size="9.5" fill="#3c4043">Popular times</text>
-                <text x="260" y="452" font-family="'DM Sans', sans-serif" font-size="8.5" fill="#ea4335">● Live: Busier</text>
-                <g fill="#8ab4f8" transform="translate(174, 462)">
-                  <rect x="0" y="20" width="8" height="14" rx="2"/>
-                  <rect x="12" y="16" width="8" height="18" rx="2"/>
-                  <rect x="24" y="12" width="8" height="22" rx="2"/>
-                  <rect x="36" y="6" width="8" height="28" rx="2"/>
-                  <rect x="48" y="0" width="8" height="34" rx="2" fill="#4285f4"/>
-                  <rect x="60" y="5" width="8" height="29" rx="2"/>
-                  <rect x="72" y="11" width="8" height="23" rx="2"/>
-                  <rect x="84" y="18" width="8" height="16" rx="2"/>
-                </g>
-
-                <polygon points="156,58 280,58 210,548 156,548" fill="url(#glassGloss)" />
-              </g>
-
-              <!-- LEFT NUDE THUMB OVER BEZEL -->
-              <g filter="url(#thumbShadow)">
-                <path d="M110 400 C120 330 145 295 195 308 C210 312 222 332 216 352 C210 370 186 386 154 406 C134 420 120 440 106 465 Z" fill="url(#nudeThumb)" />
-                <path d="M152 355 C166 360 180 358 190 350" stroke="#b67f65" stroke-width="2" stroke-linecap="round" opacity="0.5" />
-                <path d="M196 322 C202 324 209 332 208 340 C206 345 200 346 195 342 C192 338 193 328 196 322 Z" fill="#f8dbcf" opacity="0.8" />
-              </g>
-            </svg>
-
+            <!-- Soft Line Grounding Shadow -->
             <div class="boundary-shadow" aria-hidden="true"></div>
           </div>
         </div>
@@ -1215,7 +1286,7 @@
       </div>
     </section>
 
-    <!-- 2. ADDITIONAL SERVICES SECTION (Directly following packages) -->
+    <!-- 2. ADDITIONAL SERVICES SECTION -->
     <section class="additional-section">
       <div class="wrap">
         <span class="eyebrow dark">Additional Services (For Approved Businesses)</span>
@@ -1244,7 +1315,7 @@
       </div>
     </section>
 
-    <!-- 3. PROCESS SECTION (Underneath Additional Services) -->
+    <!-- 3. PROCESS SECTION -->
     <section class="process" id="process">
       <div class="wrap process-grid">
         <div class="process-intro">
