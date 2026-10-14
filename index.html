@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#11120f">
-  <meta name="description" content="Spot On Visuals helps local businesses look their best online with professional photography and visual content for Google and social media.">
+  <meta name="description" content="Professional photography and visual content for Philadelphia-area local businesses. Explore simple visual refresh packages for Google and social media.">
+  <meta property="og:title" content="Spot On Visuals — Make Your First Impression Count">
+  <meta property="og:description" content="Thoughtful visual content for local businesses, with clear one-time packages for Google and social media.">
+  <meta property="og:type" content="website">
   <title>Spot On Visuals — Make Your First Impression Count</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +25,12 @@
       --max: 1160px;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    :focus-visible { outline: 3px solid #829a23; outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
     body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
@@ -96,6 +104,10 @@
     .listing-copy p { font-size: 13px; color: var(--muted); margin: 0; }
     .listing-label { display: inline-block; margin-bottom: 10px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: #65685c; }
     .traffic-statement { max-width: 900px; margin: -12px 0 30px; font-family: Manrope, sans-serif; font-size: clamp(21px, 2.6vw, 31px); line-height: 1.3; letter-spacing: -.035em; font-weight: 700; }
+    .listing-cta { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin-top: 28px; padding: 24px 26px; border-radius: 18px; background: var(--dark); color: white; }
+    .listing-cta h3 { margin: 0 0 6px; font-size: clamp(19px, 2vw, 25px); letter-spacing: -.04em; }
+    .listing-cta p { margin: 0; color: #c4c6ba; font-size: 13px; }
+    .listing-cta .btn { flex-shrink: 0; }
 
     .process { background: #ecece3; }
     .process-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 75px; align-items: start; }
@@ -165,7 +177,9 @@
       .trust-inner { justify-content: flex-start; gap: 14px 24px; }
       .trust-inner span { width: 100%; }
       .showcase-grid { grid-template-columns: 1fr; }
-      .listing-grid { grid-template-columns: 1fr; }
+      .listing-grid { grid-template-columns: minmax(0, 1fr); }
+      .listing-cta { display: block; }
+      .listing-cta .btn { margin-top: 18px; width: 100%; }
       .showcase-card { min-height: 280px; }
       .cta-inner { display: block; }
       .cta-inner .btn { margin-top: 22px; }
@@ -216,6 +230,13 @@
           </article>
         </div>
         <p class="note">These are illustrative screenshots supplied for this website, not Spot On Visuals client work or a claim that photography changes ratings. Business ratings can change over time.</p>
+        <div class="listing-cta">
+          <div>
+            <h3>Want your business to make a stronger first impression?</h3>
+            <p>Explore a clear, one-time visual refresh built around your business.</p>
+          </div>
+          <a class="btn lime" href="#services">Explore packages <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
 
@@ -327,7 +348,7 @@
           </div>
           <div class="field"><label for="message">What would you like help with?</label><textarea id="message" name="message" placeholder="Tell us about your business and goals..."></textarea></div>
           <button class="btn lime" type="submit">Prepare my inquiry <span>↗</span></button>
-          <p class="form-help" id="form-help">This demo form opens an email draft in your mail app. Before publishing, connect it to your business email or a form service to receive inquiries reliably.</p>
+          <p class="form-help" id="form-help">Submitting opens an email draft in your mail app; this website does not store form submissions. Replace the placeholder email in the script before publishing, or connect a form service to receive inquiries reliably.</p>
         </form>
       </div>
     </section>
