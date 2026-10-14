@@ -90,11 +90,12 @@
     .listing-examples { background: #f0f0e8; }
     .listing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
     .listing-card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
-    .listing-card img { display: block; width: 100%; height: auto; }
+    .listing-card img { display: block; width: 100%; height: clamp(340px, 37vw, 540px); object-fit: cover; object-position: top center; }
     .listing-copy { padding: 20px 22px 23px; }
     .listing-copy h3 { font-size: 21px; margin: 0 0 8px; }
     .listing-copy p { font-size: 13px; color: var(--muted); margin: 0; }
     .listing-label { display: inline-block; margin-bottom: 10px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: #65685c; }
+    .traffic-statement { max-width: 900px; margin: -12px 0 30px; font-family: Manrope, sans-serif; font-size: clamp(21px, 2.6vw, 31px); line-height: 1.3; letter-spacing: -.035em; font-weight: 700; }
 
     .process { background: #ecece3; }
     .process-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 75px; align-items: start; }
@@ -188,6 +189,35 @@
   </header>
 
   <main>
+    <section class="listing-examples" id="google-listings">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow dark">Your online first impression</span><h2>People notice the details.</h2></div>
+          <p>Photos and profile details are part of how customers assess a business before they visit. Keep your visuals clear, current, and true to the experience you offer.</p>
+        </div>
+        <p class="traffic-statement">Sometimes, the difference between being passed by and bringing new people through the door starts with what customers see online.</p>
+        <div class="listing-grid">
+          <article class="listing-card">
+            <img src="images/Low-Reviews-Google%20.png" alt="User-provided screenshot of a Google listing for Geno's Steaks showing its photos, rating, and business details" loading="lazy">
+            <div class="listing-copy">
+              <span class="listing-label">Example Google listing</span>
+              <h3>Make the first look count.</h3>
+              <p>This example shows how photos, rating, price range, and business information appear together in a search listing.</p>
+            </div>
+          </article>
+          <article class="listing-card">
+            <img src="images/high-reviews-google.png" alt="User-provided screenshot of a Google listing for Del Rossi's Cheesesteak and Pizza Co. showing food photos and rating" loading="lazy">
+            <div class="listing-copy">
+              <span class="listing-label">Example Google listing</span>
+              <h3>Show customers what you serve.</h3>
+              <p>This example shows how strong food imagery and clear business details can help customers get a feel for a place before visiting.</p>
+            </div>
+          </article>
+        </div>
+        <p class="note">These are illustrative screenshots supplied for this website, not Spot On Visuals client work or a claim that photography changes ratings. Business ratings can change over time.</p>
+      </div>
+    </section>
+
     <section class="hero" id="home">
       <div class="wrap hero-grid">
         <div>
@@ -281,33 +311,7 @@
 
 
 
-    <section class="listing-examples" id="google-listings">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="eyebrow dark">Your online first impression</span><h2>People notice the details.</h2></div>
-          <p>Photos and profile details are part of how customers assess a business before they visit. Keep your visuals clear, current, and true to the experience you offer.</p>
-        </div>
-        <div class="listing-grid">
-          <article class="listing-card">
-            <img src="images/low-reviews-google.png" alt="User-provided screenshot of a Google listing for Geno's Steaks showing its photos, rating, and business details" loading="lazy">
-            <div class="listing-copy">
-              <span class="listing-label">Example Google listing</span>
-              <h3>Make the first look count.</h3>
-              <p>This example shows how photos, rating, price range, and business information appear together in a search listing.</p>
-            </div>
-          </article>
-          <article class="listing-card">
-            <img src="images/high-reviews-google.png" alt="User-provided screenshot of a Google listing for Del Rossi's Cheesesteak and Pizza Co. showing food photos and rating" loading="lazy">
-            <div class="listing-copy">
-              <span class="listing-label">Example Google listing</span>
-              <h3>Show customers what you serve.</h3>
-              <p>Useful, appetizing photos can help people get a better feel for your menu and atmosphere before they arrive.</p>
-            </div>
-          </article>
-        </div>
-        <p class="note">These are illustrative screenshots supplied for this website, not Spot On Visuals client work or a claim that photography changes ratings. Business ratings can change over time.</p>
-      </div>
-    </section>
+
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
         <div><span class="eyebrow">Your next step</span><h2>Let's make your business stand out.</h2><p class="contact-copy">Tell us a little about your business and what you're looking to improve. We'll use that to start a useful, no-pressure conversation.</p><div class="contact-points"><span>Clear packages and expectations</span><span>Friendly, personalized service</span><span>Built around your business goals</span></div></div>
@@ -361,4 +365,3 @@
   </script>
 </body>
 </html>
-
